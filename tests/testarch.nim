@@ -1,3 +1,5 @@
+import os
+
 import nimarchive/archive
 import nimarchive/archive_entry
 
@@ -6,7 +8,7 @@ if archive_read_support_format_7zip(arch) != ARCHIVE_OK:
   echo "7zip not supported"
   quit(1)
 
-if archive_read_open_filename(arch, "tests\\nimarchive.7z", 10240) != ARCHIVE_OK:
+if archive_read_open_filename(arch, "tests"/"nimarchive.7z", 10240) != ARCHIVE_OK:
   echo archive_error_string(arch)
   quit(1)
 
