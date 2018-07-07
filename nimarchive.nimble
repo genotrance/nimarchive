@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "genotrance"
 description   = "libarchive wrapper for Nim"
 license       = "MIT"
@@ -9,7 +9,7 @@ skipDirs = @["tests"]
 
 # Dependencies
 
-requires "nimgen >= 0.1.5"
+requires "nimgen >= 0.2.2"
 
 import distros
 
