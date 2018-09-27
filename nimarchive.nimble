@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.2"
+version       = "0.1.3"
 author        = "genotrance"
 description   = "libarchive wrapper for Nim"
 license       = "MIT"
@@ -15,13 +15,13 @@ import distros
 
 var cmd = ""
 if detectOs(Windows):
-    cmd = "cmd /c "
+  cmd = "cmd /c "
 
 task setup, "Download and generate":
-    exec cmd & "nimgen nimarchive.cfg"
+  exec cmd & "nimgen nimarchive.cfg"
 
 before install:
-    setupTask()
+  setupTask()
 
 task test, "Test":
-    exec "nim c -r tests/testarch.nim"
+  exec "nim c -r tests/testarch.nim"
