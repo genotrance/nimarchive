@@ -2,4 +2,4 @@ nimarchive
 nimcache
 *.exe
 *.swp
-test*
+tnimarchive*
