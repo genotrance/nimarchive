@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.3"
+version       = "0.1.4"
 author        = "genotrance"
 description   = "libarchive wrapper for Nim"
 license       = "MIT"
@@ -9,19 +9,22 @@ skipDirs = @["tests"]
 
 # Dependencies
 
-requires "nimgen >= 0.2.2"
+requires "nimgen >= 0.4.0"
 
-import distros
+var
+  name = "nimarchive"
+  cmd = when defined(Windows): "cmd /c " else: ""
 
-var cmd = ""
-if detectOs(Windows):
-  cmd = "cmd /c "
+mkDir(name)
 
-task setup, "Download and generate":
-  exec cmd & "nimgen nimarchive.cfg"
+task setup, "Checkout and generate":
+  if gorgeEx(cmd & "nimgen").exitCode != 0:
+    withDir(".."):
+      exec "nimble install nimgen -y"
+  exec cmd & "nimgen " & name & ".cfg"
 
 before install:
   setupTask()
 
-task test, "Test":
-  exec "nim c -r tests/testarch.nim"
+task test, "Run tests":
+  exec "nim c -r tests/t" & name & ".nim"

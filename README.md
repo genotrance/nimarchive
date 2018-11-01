@@ -7,11 +7,7 @@ __Installation__
 Nimarchive can be installed via [Nimble](https://github.com/nim-lang/nimble):
 
 ```
-> nimble install nimgen
-
-> git clone https://github.com/genotrance/nimarchive
-> cd nimarchive
-> nimble install
+> nimble install nimarchive
 ```
 
 This will download, wrap and install nimarchive in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
