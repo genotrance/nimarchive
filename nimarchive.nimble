@@ -28,3 +28,4 @@ before install:
 
 task test, "Run tests":
   exec "nim c -r tests/t" & name & ".nim"
+  exec "nim c -r tests/t" & name & "_extract.nim"
