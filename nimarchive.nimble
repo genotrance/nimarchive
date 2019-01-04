@@ -15,7 +15,8 @@ var
   name = "nimarchive"
   cmd = when defined(Windows): "cmd /c " else: ""
 
-mkDir(name)
+if fileExists(name & ".nimble"):
+  mkDir(name)
 
 task setup, "Checkout and generate":
   if gorgeEx(cmd & "nimgen").exitCode != 0:
