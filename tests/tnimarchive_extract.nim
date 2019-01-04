@@ -5,10 +5,17 @@ import os
 let
   dest = "tests/extracted"
 
+proc rmDir(dest: string) =
+  while dirExists(dest):
+    try:
+      removeDir(dest)
+    except:
+      sleep(100)
+
 for pl in walkDir("tests/payload"):
   echo pl.path
 
-  removeDir(dest)
+  rmDir(dest)
   try:
     extract(pl.path, dest)
   except:
@@ -20,4 +27,4 @@ for pl in walkDir("tests/payload"):
     echo "Failed"
     quit(1)
 
-removeDir(dest)
+rmDir(dest)
