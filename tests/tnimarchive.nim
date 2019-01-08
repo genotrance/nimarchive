@@ -18,6 +18,10 @@ while archive_read_next_header(arch, addr arch_entry) == ARCHIVE_OK:
   assert archive_entry_pathname(arch_entry) == "LICENSE"
   assert archive_read_data_skip(arch) == 0
 
+if archive_read_close(arch) != ARCHIVE_OK:
+  echo "Close failed"
+  quit(1)
+
 if archive_read_free(arch) != ARCHIVE_OK:
   echo "Free failed"
   quit(1)
