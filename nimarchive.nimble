@@ -23,6 +23,7 @@ task setup, "Checkout and generate":
     withDir(".."):
       exec "nimble install nimgen -y"
   exec cmd & "nimgen " & name & ".cfg"
+  installDirs.add name
 
 before install:
   setupTask()
