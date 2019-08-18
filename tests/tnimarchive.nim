@@ -1,9 +1,9 @@
 import os
 
 import nimarchive/archive
-import nimarchive/archive_entry
 
 var arch = archive_read_new()
+
 if archive_read_support_format_7zip(arch) != ARCHIVE_OK:
   echo "7zip not supported"
   quit(1)
@@ -17,10 +17,6 @@ var arch_entry: ptr archive_entry
 while archive_read_next_header(arch, addr arch_entry) == ARCHIVE_OK:
   assert archive_entry_pathname(arch_entry) == "LICENSE"
   assert archive_read_data_skip(arch) == 0
-
-if archive_read_close(arch) != ARCHIVE_OK:
-  echo "Close failed"
-  quit(1)
 
 if archive_read_free(arch) != ARCHIVE_OK:
   echo "Free failed"

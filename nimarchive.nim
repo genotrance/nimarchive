@@ -1,7 +1,6 @@
 import os
 
 import nimarchive/archive
-import nimarchive/archive_entry
 
 proc check(err: cint, arch: ptr archive, verbose=false) =
   if err < ARCHIVE_OK and verbose:
@@ -15,8 +14,8 @@ proc copyData(arch: ptr archive, ext: ptr archive, verbose=false): cint =
   var
     ret: cint
     buf: pointer
-    size: csize
-    offset: archive_entry.la_int64
+    size: cuint
+    offset: la_int64_t
 
   while true:
     ret = arch.archive_read_data_block(addr buf, addr size, addr offset)
@@ -69,7 +68,5 @@ proc extract*(path: string, extractDir: string, verbose=false) =
 
     ext.archive_write_finish_entry().check(ext, verbose)
 
-  arch.archive_read_close().check(arch, verbose)
   arch.archive_read_free().check(arch, verbose)
-  ext.archive_write_close().check(ext, verbose)
   ext.archive_write_free().check(ext, verbose)

@@ -1,6 +1,6 @@
 Nimarchive is a [Nim](https://nim-lang.org/) wrapper for the [libarchive](https://github.com/libarchive/libarchive) library.
 
-Nimarchive is distributed as a [Nimble](https://github.com/nim-lang/nimble) package and depends on [nimgen](https://github.com/genotrance/nimgen) and [c2nim](https://github.com/nim-lang/c2nim/) to generate the wrappers. The libarchive source code is downloaded using Git so having ```git``` in the path is required.
+Nimarchive is distributed as a [Nimble](https://github.com/nim-lang/nimble) package and depends on [nimterop](https://github.com/nimterop/nimterop) to generate the wrappers. The libarchive source code is downloaded using Git so having ```git``` in the path is required.
 
 __Installation__
 
@@ -10,7 +10,7 @@ Nimarchive can be installed via [Nimble](https://github.com/nim-lang/nimble):
 > nimble install nimarchive
 ```
 
-This will download, wrap and install nimarchive in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
+This will download and install nimarchive in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
 
 [liblzma](https://github.com/kobolabs/liblzma) and [zlib](https://github.com/madler/zlib) are also downloaded since they are required dependencies.
 
@@ -31,8 +31,6 @@ Refer to the ```tests``` directory for examples on how the library can be used. 
 __Credits__
 
 Nimarchive wraps the libarchive source code and all licensing terms of [libarchive](https://github.com/libarchive/libarchive/blob/master/COPYING) apply to the usage of this package. The [liblzma](https://github.com/kobolabs/liblzma/blob/master/COPYING) and [zlib](https://zlib.net/zlib_license.html) terms also apply since they are dependencies.
-
-Credits go out to [c2nim](https://github.com/nim-lang/c2nim/) as well without which this package would be greatly limited in its abilities.
 
 __Feedback__
 
