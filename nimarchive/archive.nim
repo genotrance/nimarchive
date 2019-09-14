@@ -1,72 +1,85 @@
-import os, strutils
+import os, strutils, strformat
 
-import nimterop/[cimport, git]
+import nimterop/[build, cimport]
+
+import bzlib, lzma, zlib
 
 const
-  path = getTempDir() / "nimarchive"
-  adoth = path/"libarchive/libarchive/archive.h"
-
-  lzma = path/"liblzma"
-  lzmasrc = lzma/"src/liblzma"
-  zlib = path/"zlib"
-  libarchive = path/"libarchive"
+  baseDir = currentSourcePath.parentDir() / "build" / "libarchive"
 
 static:
-  var conFlags = ""
-
-  # liblzma
-  gitPull("https://github.com/kobolabs/liblzma", lzma)
-  for i in ["xz", "xzdec", "lzmadec", "lzmainfo", "shared"]:
-    conFlags &= " --disable-$#" % i
-  configure(lzma, "Makefile", conFlags)
-  make(lzmasrc, ".libs/liblzma.a", "-j 2")
-
-  # zlib
-  gitPull("https://github.com/madler/zlib", zlib)
-  configure(zlib, "configure.log", "--static")
-  make(zlib, "libz.a")
-
-  putEnv("CFLAGS", "-DHAVE_LIBLZMA=1 -DHAVE_LZMA_H=1 -DHAVE_LIBZ=1 -DHAVE_ZLIB_H=1 -I" &
-    (lzmasrc/"api").replace("\\", "/").replace("C:", "/c") & " -I" & zlib.replace("\\", "/").replace("C:", "/c"))
-
-  # libarchive
-  gitPull("https://github.com/libarchive/libarchive", libarchive)
-
-  conFlags = ""
-  for i in ["lzma", "zlib", "bz2lib", "nettle", "openssl", "libb2", "lz4", "zstd", "xml2", "expat"]:
-    conFlags &= " --without-$#" % i
-  for i in ["shared", "bsdtar", "bsdcat", "bsdcpio", "acl"]:
-    conFlags &= " --disable-$#" % i
-  configure(libarchive/"build", "../configure")
-  configure(libarchive, "Makefile", conFlags)
-
-  make(libarchive, ".libs/libarchive.a", "libarchive.la -j 2")
-
-  writeFile(adoth, readFile(adoth) & "\n#include \"archive_entry.h\"\n")
-
   cDebug()
-  cSkipSymbol(@["archive_read_open_file", "archive_write_open_file"])
 
-  {.passL: libarchive/".libs/libarchive.a" & " " & lzmasrc/".libs/liblzma.a" & " " & zlib/"libz.a".}
+proc mPath(path: string): string =
+  when defined(windows):
+    result = path.replace("\\", "/")
+  else:
+    result = path
+  result = result.quoteShell
+
+const
+  conFlags = block:
+    var cf = ""
+    for i in ["lzma", "zlib", "bz2lib", "nettle", "openssl", "libb2", "lz4", "zstd", "xml2", "expat"]:
+      cf &= " --without-$#" % i
+    for i in ["shared", "bsdtar", "bsdcat", "bsdcpio", "acl"]:
+      cf &= " --disable-$#" % i
+    cf
+
+  cmakeFlags = block:
+    let
+      incpath = (lzmaPath.parentDir() & ";" & zlibPath.parentDir() & ";" & bzlibPath.parentDir()).mPath()
+      llp = lzmaLPath.mPath()
+      zlp = zlibLPath.mPath()
+      blp = bzlibLPath.mPath()
+    var cf = &"-DCMAKE_INCLUDE_PATH={incpath} -DLIBLZMA_LIBRARY={llp} -DZLIB_LIBRARY={zlp} -DBZIP2_LIBRARY_RELEASE={blp}"
+    cf
+
+proc archivePreBuild(outdir, path: string) =
+  #~ putEnv("CFLAGS", "-DHAVE_LIBLZMA=1 -DHAVE_LZMA_H=1 -DHAVE_LIBZ=1 -DHAVE_ZLIB_H=1 -I" &
+    #~ lzmaPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
+    #~ zlibPath.parentDir().replace("\\", "/").replace("C:", "/c"))
+  let
+    rf = readFile(path)
+    str = "\n#include \"archive_entry.h\"\n"
+  if not rf.contains(str):
+    writeFile(path, rf & str)
+
+getHeader(
+  "archive.h",
+  "https://github.com/libarchive/libarchive",
+  "https://libarchive.org/downloads/libarchive-$1.zip",
+  outdir = baseDir,
+  conFlags = conFlags,
+  cmakeFlags = cmakeFlags
+)
 
 cPlugin:
-  import macros, strutils
+  import strutils
 
   proc onSymbol*(sym: var Symbol) {.exportc, dynlib.} =
     if sym.kind in [nskParam]:
       sym.name = sym.name.strip(chars={'_'})
 
-type
-  stat {.importc: "struct stat", header: "sys/stat.h".} = object
-  dev_t = int32
-  mode_t = uint32
-
-when defined(windows):
+cOverride:
   type
-    BY_HANDLE_FILE_INFORMATION = object
+    stat* {.importc: "struct stat", header: "sys/stat.h".} = object
+    dev_t* = int32
+    mode_t* = uint32
 
-  {.passC: "-DHAVE_CONFIG_H -std=c99 -I" & libarchive.}
-  {.passL: "-lbcrypt".}
-  cCompile(path / "libarchive/libarchive/*_windows.c")
+  when defined(windows):
+    type
+      BY_HANDLE_FILE_INFORMATION* = object
 
-cImport(adoth, recurse=true)
+    {.passL: "-lbcrypt".}
+
+static:
+  cSkipSymbol(@["archive_read_open_file", "archive_write_open_file"])
+
+when not defined(archiveStatic):
+  cImport(archivePath, recurse = true, dynlib = "archiveLPath")
+else:
+  cImport(archivePath, recurse = true)
+  {.passL: bzlibLPath.}
+  {.passL: lzmaLPath.}
+  {.passL: zlibLPath.}
