@@ -6,12 +6,15 @@ const
   baseDir = currentSourcePath.parentDir()/"build"/"bzip2"
 
 proc bzlibPreBuild(outdir, path: string) =
+  var
+    mf = baseDir / "Makefile"
+    mfd = mf.readFile()
   when defined(windows):
-    let
-      mf = baseDir / "Makefile"
-      mfd = mf.readFile().multiReplace([("rm -f", "cmd /c del /q"), ("@cat", "@cmd /c type")])
+    mfd = mfd.multiReplace([("rm -f", "cmd /c del /q"), ("@cat", "@cmd /c type")])
+  else:
+    mfd = mfd.replace("CFLAGS=-Wall", "CFLAGS=-fPIC -Wall")
 
-    mf.writeFile(mfd)
+  mf.writeFile(mfd)
 
 getHeader(
   "bzlib.h",

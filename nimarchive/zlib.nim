@@ -19,6 +19,9 @@ proc zlibPreBuild(outdir, path: string) =
         # Fix static lib name on Windows
         setCmakeLibName(outdir, "zlibstatic", prefix = "lib", oname = "zlib", suffix = ".a")
 
+  when defined(posix):
+    setCmakePositionIndependentCode(outdir)
+
 getHeader(
   "zlib.h",
   giturl = "https://github.com/madler/zlib",

@@ -2,6 +2,28 @@ import os, strutils, strformat
 
 import nimterop/[build, cimport]
 
+const
+  defs = """
+    archiveStatic
+    archiveDL
+    archiveSetVer=3.4.0
+
+    bzlibStatic
+    bzlibDL
+    bzlibSetVer=1.0.8
+
+    lzmaStatic
+    lzmaDL
+    lzmaSetVer=5.2.4
+
+    zlibStatic
+    zlibDL
+    zlibSetVer=1.2.11
+  """
+
+static:
+  setupDefines(defs.splitLines())
+
 import bzlib, lzma, zlib
 
 const
@@ -10,35 +32,34 @@ const
 static:
   cDebug()
 
-proc mPath(path: string): string =
-  when defined(windows):
-    result = path.replace("\\", "/")
-  else:
-    result = path
-  result = result.quoteShell
-
 const
   conFlags = block:
-    var cf = ""
-    for i in ["lzma", "zlib", "bz2lib", "nettle", "openssl", "libb2", "lz4", "zstd", "xml2", "expat"]:
-      cf &= " --without-$#" % i
-    for i in ["shared", "bsdtar", "bsdcat", "bsdcpio", "acl"]:
-      cf &= " --disable-$#" % i
+    var cf =
+      flagBuild("--without-$#",
+        ["lzma", "zlib", "bz2lib", "nettle", "openssl", "libb2", "lz4", "zstd", "xml2", "expat"]
+      ) &
+      flagBuild("--disable-$#",
+        ["bsdtar", "bsdcat", "bsdcpio", "acl"]
+      )
     cf
 
   cmakeFlags = block:
     let
-      incpath = (lzmaPath.parentDir() & ";" & zlibPath.parentDir() & ";" & bzlibPath.parentDir()).mPath()
-      llp = lzmaLPath.mPath()
-      zlp = zlibLPath.mPath()
-      blp = bzlibLPath.mPath()
-    var cf = &"-DCMAKE_INCLUDE_PATH={incpath} -DLIBLZMA_LIBRARY={llp} -DZLIB_LIBRARY={zlp} -DBZIP2_LIBRARY_RELEASE={blp}"
+      llp = lzmaLPath.sanitizePath(sep = "/")
+      zlp = zlibLPath.sanitizePath(sep = "/")
+      blp = bzlibLPath.sanitizePath(sep = "/")
+    var cf =
+      getCmakeIncludePath([lzmaPath.parentDir(), zlibPath.parentDir(), bzlibPath.parentDir()]) &
+      &" -DLIBLZMA_LIBRARY={llp} -DZLIB_LIBRARY={zlp} -DBZIP2_LIBRARY_RELEASE={blp}" &
+      flagBuild("-DENABLE_$#=OFF",
+        ["NETTLE", "OPENSSL", "LIBB2", "LZ4", "ZSTD", "LIBXML2", "EXPAT", "TEST", "TAR", "CAT", "CPIO", "ACL"]
+      )
     cf
 
 proc archivePreBuild(outdir, path: string) =
-  #~ putEnv("CFLAGS", "-DHAVE_LIBLZMA=1 -DHAVE_LZMA_H=1 -DHAVE_LIBZ=1 -DHAVE_ZLIB_H=1 -I" &
-    #~ lzmaPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
-    #~ zlibPath.parentDir().replace("\\", "/").replace("C:", "/c"))
+  putEnv("CFLAGS", "-DHAVE_LIBLZMA=1 -DHAVE_LZMA_H=1 -DHAVE_LIBZ=1 -DHAVE_ZLIB_H=1 -I" &
+    lzmaPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
+    zlibPath.parentDir().replace("\\", "/").replace("C:", "/c"))
   let
     rf = readFile(path)
     str = "\n#include \"archive_entry.h\"\n"
@@ -76,10 +97,10 @@ cOverride:
 static:
   cSkipSymbol(@["archive_read_open_file", "archive_write_open_file"])
 
-when not defined(archiveStatic):
-  cImport(archivePath, recurse = true, dynlib = "archiveLPath")
-else:
+when archiveStatic:
   cImport(archivePath, recurse = true)
   {.passL: bzlibLPath.}
   {.passL: lzmaLPath.}
   {.passL: zlibLPath.}
+else:
+  cImport(archivePath, recurse = true, dynlib = "archiveLPath")
