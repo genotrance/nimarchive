@@ -3,7 +3,7 @@ import os, strutils
 import nimterop/[build, cimport]
 
 const
-  baseDir = currentSourcePath.parentDir()/"build/liblzma"
+  baseDir = currentSourcePath.parentDir()/"build"/"liblzma"
   conFlags = block:
     var
       cf = flagBuild("--disable-$#", ["xz", "xzdec", "lzmadec", "lzmainfo"])

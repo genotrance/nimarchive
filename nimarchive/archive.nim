@@ -21,8 +21,7 @@ const
     zlibSetVer=1.2.11
   """
 
-static:
-  setupDefines(defs.splitLines())
+setDefines(defs.splitLines())
 
 import bzlib, lzma, zlib
 
@@ -102,5 +101,7 @@ when archiveStatic:
   {.passL: bzlibLPath.}
   {.passL: lzmaLPath.}
   {.passL: zlibLPath.}
+  when defined(osx):
+    {.passL: "-liconv".}
 else:
   cImport(archivePath, recurse = true, dynlib = "archiveLPath")

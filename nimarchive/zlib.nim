@@ -29,3 +29,6 @@ getHeader(
   outdir = baseDir,
   altNames = "z"
 )
+
+static:
+  cpFile(baseDir / "buildcache" / "zconf.h", baseDir / "zconf.h")
