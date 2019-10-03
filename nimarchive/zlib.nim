@@ -1,12 +1,9 @@
 import os, strutils
 
-import nimterop/[build, cimport]
+import nimterop/build
 
 const
-  baseDir = currentSourcePath.parentDir()/"build"/"zlib"
-
-static:
-  cDebug()
+  baseDir = currentSourcePath.parentDir().parentDir() / "build" / "zlib"
 
 proc zlibPreBuild(outdir, path: string) =
   let

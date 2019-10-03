@@ -3,7 +3,7 @@ import os, strutils
 import nimterop/build
 
 const
-  baseDir = currentSourcePath.parentDir()/"build"/"bzip2"
+  baseDir = currentSourcePath.parentDir().parentDir() / "build" / "bzip2"
 
 proc bzlibPreBuild(outdir, path: string) =
   var

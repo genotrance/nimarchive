@@ -15,6 +15,7 @@ cache:
   directories:
     - "$HOME/.nimble/bin"
     - "$HOME/.choosenim"
+    - "$TRAVIS_BUILD_DIR/git"
 
 install:
   - export CHOOSENIM_NO_ANALYTICS=1
@@ -44,8 +45,6 @@ install:
         curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
         sh init.sh -y
       fi
-    else
-      choosenim $BRANCH -y
     fi
   - |
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then

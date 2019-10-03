@@ -2,7 +2,12 @@ import os, strutils, strformat
 
 import nimterop/[build, cimport]
 
+static:
+  cDebug()
+
 const
+  baseDir = currentSourcePath.parentDir().parentDir() / "build" / "libarchive"
+
   defs = """
     archiveStatic
     archiveDL
@@ -26,39 +31,32 @@ setDefines(defs.splitLines())
 import bzlib, lzma, zlib
 
 const
-  baseDir = currentSourcePath.parentDir() / "build" / "libarchive"
+  llp = lzmaLPath.sanitizePath(sep = "/")
+  zlp = zlibLPath.sanitizePath(sep = "/")
+  blp = bzlibLPath.sanitizePath(sep = "/")
 
-static:
-  cDebug()
+  conFlags =
+    flagBuild("--without-$#",
+      ["lzma", "zlib", "bz2lib", "nettle", "openssl", "libb2", "lz4", "zstd", "xml2", "expat"]
+    ) &
+    flagBuild("--disable-$#",
+      ["bsdtar", "bsdcat", "bsdcpio", "acl"]
+    )
 
-const
-  conFlags = block:
-    var cf =
-      flagBuild("--without-$#",
-        ["lzma", "zlib", "bz2lib", "nettle", "openssl", "libb2", "lz4", "zstd", "xml2", "expat"]
-      ) &
-      flagBuild("--disable-$#",
-        ["bsdtar", "bsdcat", "bsdcpio", "acl"]
-      )
-    cf
-
-  cmakeFlags = block:
-    let
-      llp = lzmaLPath.sanitizePath(sep = "/")
-      zlp = zlibLPath.sanitizePath(sep = "/")
-      blp = bzlibLPath.sanitizePath(sep = "/")
-    var cf =
-      getCmakeIncludePath([lzmaPath.parentDir(), zlibPath.parentDir(), bzlibPath.parentDir()]) &
-      &" -DLIBLZMA_LIBRARY={llp} -DZLIB_LIBRARY={zlp} -DBZIP2_LIBRARY_RELEASE={blp}" &
-      flagBuild("-DENABLE_$#=OFF",
-        ["NETTLE", "OPENSSL", "LIBB2", "LZ4", "ZSTD", "LIBXML2", "EXPAT", "TEST", "TAR", "CAT", "CPIO", "ACL"]
-      )
-    cf
+  cmakeFlags =
+    getCmakeIncludePath([lzmaPath.parentDir(), zlibPath.parentDir(), bzlibPath.parentDir()]) &
+    &" -DLIBLZMA_LIBRARY={llp} -DZLIB_LIBRARY={zlp} -DBZIP2_LIBRARY_RELEASE={blp}" &
+    flagBuild("-DENABLE_$#=OFF",
+      ["NETTLE", "OPENSSL", "LIBB2", "LZ4", "ZSTD", "LIBXML2", "EXPAT", "TEST", "TAR", "CAT", "CPIO", "ACL"]
+    )
 
 proc archivePreBuild(outdir, path: string) =
-  putEnv("CFLAGS", "-DHAVE_LIBLZMA=1 -DHAVE_LZMA_H=1 -DHAVE_LIBZ=1 -DHAVE_ZLIB_H=1 -I" &
+  putEnv("CFLAGS", "-DHAVE_LIBLZMA=1 -DHAVE_LZMA_H=1" &
+    " -DHAVE_LIBBZ2=1 -DHAVE_BZLIB_H=1" &
+    " -DHAVE_LIBZ=1 -DHAVE_ZLIB_H=1 -I" &
     lzmaPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
     zlibPath.parentDir().replace("\\", "/").replace("C:", "/c"))
+  putEnv("LIBS", &"{llp} {zlp} {blp}")
   let
     rf = readFile(path)
     str = "\n#include \"archive_entry.h\"\n"

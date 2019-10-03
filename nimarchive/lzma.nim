@@ -1,18 +1,16 @@
 import os, strutils
 
-import nimterop/[build, cimport]
+import nimterop/build
 
 const
-  baseDir = currentSourcePath.parentDir()/"build"/"liblzma"
+  baseDir = currentSourcePath.parentDir().parentDir() / "build" / "liblzma"
+
   conFlags = block:
     var
       cf = flagBuild("--disable-$#", ["xz", "xzdec", "lzmadec", "lzmainfo"])
     when defined(posix):
       cf &= " CFLAGS=-fPIC CXXFLAGS=-fPIC"
     cf
-
-static:
-  cDebug()
 
 getHeader(
   "lzma.h",
