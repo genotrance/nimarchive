@@ -1,0 +1,1 @@
+extract	nimarchive.html#extract,string,string	nimarchive: extract(path: string; extractDir: string; verbose = false)	

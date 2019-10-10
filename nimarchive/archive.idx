@@ -1,0 +1,510 @@
+archiveStd	nimarchive/archive.html#archiveStd	archive: archiveStd	
+archiveGit	nimarchive/archive.html#archiveGit	archive: archiveGit	
+archiveDL	nimarchive/archive.html#archiveDL	archive: archiveDL	
+archiveStatic	nimarchive/archive.html#archiveStatic	archive: archiveStatic	
+archiveSetVer	nimarchive/archive.html#archiveSetVer	archive: archiveSetVer	
+archivePath	nimarchive/archive.html#archivePath	archive: archivePath	
+archiveLPath	nimarchive/archive.html#archiveLPath	archive: archiveLPath	
+stat	nimarchive/archive.html#stat	archive: stat	
+dev_t	nimarchive/archive.html#dev_t	archive: dev_t	
+mode_t	nimarchive/archive.html#mode_t	archive: mode_t	
+ARCHIVE_VERSION_NUMBER	nimarchive/archive.html#ARCHIVE_VERSION_NUMBER	archive: ARCHIVE_VERSION_NUMBER	
+ARCHIVE_EOF	nimarchive/archive.html#ARCHIVE_EOF	archive: ARCHIVE_EOF	
+ARCHIVE_OK	nimarchive/archive.html#ARCHIVE_OK	archive: ARCHIVE_OK	
+ARCHIVE_FILTER_NONE	nimarchive/archive.html#ARCHIVE_FILTER_NONE	archive: ARCHIVE_FILTER_NONE	
+ARCHIVE_FILTER_GZIP	nimarchive/archive.html#ARCHIVE_FILTER_GZIP	archive: ARCHIVE_FILTER_GZIP	
+ARCHIVE_FILTER_BZIP2	nimarchive/archive.html#ARCHIVE_FILTER_BZIP2	archive: ARCHIVE_FILTER_BZIP2	
+ARCHIVE_FILTER_COMPRESS	nimarchive/archive.html#ARCHIVE_FILTER_COMPRESS	archive: ARCHIVE_FILTER_COMPRESS	
+ARCHIVE_FILTER_PROGRAM	nimarchive/archive.html#ARCHIVE_FILTER_PROGRAM	archive: ARCHIVE_FILTER_PROGRAM	
+ARCHIVE_FILTER_LZMA	nimarchive/archive.html#ARCHIVE_FILTER_LZMA	archive: ARCHIVE_FILTER_LZMA	
+ARCHIVE_FILTER_XZ	nimarchive/archive.html#ARCHIVE_FILTER_XZ	archive: ARCHIVE_FILTER_XZ	
+ARCHIVE_FILTER_UU	nimarchive/archive.html#ARCHIVE_FILTER_UU	archive: ARCHIVE_FILTER_UU	
+ARCHIVE_FILTER_RPM	nimarchive/archive.html#ARCHIVE_FILTER_RPM	archive: ARCHIVE_FILTER_RPM	
+ARCHIVE_FILTER_LZIP	nimarchive/archive.html#ARCHIVE_FILTER_LZIP	archive: ARCHIVE_FILTER_LZIP	
+ARCHIVE_FILTER_LRZIP	nimarchive/archive.html#ARCHIVE_FILTER_LRZIP	archive: ARCHIVE_FILTER_LRZIP	
+ARCHIVE_FILTER_LZOP	nimarchive/archive.html#ARCHIVE_FILTER_LZOP	archive: ARCHIVE_FILTER_LZOP	
+ARCHIVE_FILTER_GRZIP	nimarchive/archive.html#ARCHIVE_FILTER_GRZIP	archive: ARCHIVE_FILTER_GRZIP	
+ARCHIVE_FILTER_LZ4	nimarchive/archive.html#ARCHIVE_FILTER_LZ4	archive: ARCHIVE_FILTER_LZ4	
+ARCHIVE_FILTER_ZSTD	nimarchive/archive.html#ARCHIVE_FILTER_ZSTD	archive: ARCHIVE_FILTER_ZSTD	
+ARCHIVE_FORMAT_CPIO	nimarchive/archive.html#ARCHIVE_FORMAT_CPIO	archive: ARCHIVE_FORMAT_CPIO	
+ARCHIVE_FORMAT_SHAR	nimarchive/archive.html#ARCHIVE_FORMAT_SHAR	archive: ARCHIVE_FORMAT_SHAR	
+ARCHIVE_FORMAT_TAR	nimarchive/archive.html#ARCHIVE_FORMAT_TAR	archive: ARCHIVE_FORMAT_TAR	
+ARCHIVE_FORMAT_ISO9660	nimarchive/archive.html#ARCHIVE_FORMAT_ISO9660	archive: ARCHIVE_FORMAT_ISO9660	
+ARCHIVE_FORMAT_ZIP	nimarchive/archive.html#ARCHIVE_FORMAT_ZIP	archive: ARCHIVE_FORMAT_ZIP	
+ARCHIVE_FORMAT_EMPTY	nimarchive/archive.html#ARCHIVE_FORMAT_EMPTY	archive: ARCHIVE_FORMAT_EMPTY	
+ARCHIVE_FORMAT_AR	nimarchive/archive.html#ARCHIVE_FORMAT_AR	archive: ARCHIVE_FORMAT_AR	
+ARCHIVE_FORMAT_MTREE	nimarchive/archive.html#ARCHIVE_FORMAT_MTREE	archive: ARCHIVE_FORMAT_MTREE	
+ARCHIVE_FORMAT_RAW	nimarchive/archive.html#ARCHIVE_FORMAT_RAW	archive: ARCHIVE_FORMAT_RAW	
+ARCHIVE_FORMAT_RAR_V5	nimarchive/archive.html#ARCHIVE_FORMAT_RAR_V5	archive: ARCHIVE_FORMAT_RAR_V5	
+ARCHIVE_READ_FORMAT_ENCRYPTION_UNSUPPORTED	nimarchive/archive.html#ARCHIVE_READ_FORMAT_ENCRYPTION_UNSUPPORTED	archive: ARCHIVE_READ_FORMAT_ENCRYPTION_UNSUPPORTED	
+ARCHIVE_READ_FORMAT_ENCRYPTION_DONT_KNOW	nimarchive/archive.html#ARCHIVE_READ_FORMAT_ENCRYPTION_DONT_KNOW	archive: ARCHIVE_READ_FORMAT_ENCRYPTION_DONT_KNOW	
+AE_SYMLINK_TYPE_UNDEFINED	nimarchive/archive.html#AE_SYMLINK_TYPE_UNDEFINED	archive: AE_SYMLINK_TYPE_UNDEFINED	
+AE_SYMLINK_TYPE_FILE	nimarchive/archive.html#AE_SYMLINK_TYPE_FILE	archive: AE_SYMLINK_TYPE_FILE	
+AE_SYMLINK_TYPE_DIRECTORY	nimarchive/archive.html#AE_SYMLINK_TYPE_DIRECTORY	archive: AE_SYMLINK_TYPE_DIRECTORY	
+ARCHIVE_ENTRY_ACL_EXECUTE	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_EXECUTE	archive: ARCHIVE_ENTRY_ACL_EXECUTE	
+ARCHIVE_ENTRY_ACL_WRITE	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_WRITE	archive: ARCHIVE_ENTRY_ACL_WRITE	
+ARCHIVE_ENTRY_ACL_READ	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_READ	archive: ARCHIVE_ENTRY_ACL_READ	
+ARCHIVE_ENTRY_ACL_READ_DATA	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_READ_DATA	archive: ARCHIVE_ENTRY_ACL_READ_DATA	
+ARCHIVE_ENTRY_ACL_LIST_DIRECTORY	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_LIST_DIRECTORY	archive: ARCHIVE_ENTRY_ACL_LIST_DIRECTORY	
+ARCHIVE_ENTRY_ACL_WRITE_DATA	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_WRITE_DATA	archive: ARCHIVE_ENTRY_ACL_WRITE_DATA	
+ARCHIVE_ENTRY_ACL_ADD_FILE	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_ADD_FILE	archive: ARCHIVE_ENTRY_ACL_ADD_FILE	
+ARCHIVE_ENTRY_ACL_APPEND_DATA	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_APPEND_DATA	archive: ARCHIVE_ENTRY_ACL_APPEND_DATA	
+ARCHIVE_ENTRY_ACL_ADD_SUBDIRECTORY	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_ADD_SUBDIRECTORY	archive: ARCHIVE_ENTRY_ACL_ADD_SUBDIRECTORY	
+ARCHIVE_ENTRY_ACL_READ_NAMED_ATTRS	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_READ_NAMED_ATTRS	archive: ARCHIVE_ENTRY_ACL_READ_NAMED_ATTRS	
+ARCHIVE_ENTRY_ACL_WRITE_NAMED_ATTRS	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_WRITE_NAMED_ATTRS	archive: ARCHIVE_ENTRY_ACL_WRITE_NAMED_ATTRS	
+ARCHIVE_ENTRY_ACL_DELETE_CHILD	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_DELETE_CHILD	archive: ARCHIVE_ENTRY_ACL_DELETE_CHILD	
+ARCHIVE_ENTRY_ACL_READ_ATTRIBUTES	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_READ_ATTRIBUTES	archive: ARCHIVE_ENTRY_ACL_READ_ATTRIBUTES	
+ARCHIVE_ENTRY_ACL_WRITE_ATTRIBUTES	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_WRITE_ATTRIBUTES	archive: ARCHIVE_ENTRY_ACL_WRITE_ATTRIBUTES	
+ARCHIVE_ENTRY_ACL_DELETE	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_DELETE	archive: ARCHIVE_ENTRY_ACL_DELETE	
+ARCHIVE_ENTRY_ACL_READ_ACL	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_READ_ACL	archive: ARCHIVE_ENTRY_ACL_READ_ACL	
+ARCHIVE_ENTRY_ACL_WRITE_ACL	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_WRITE_ACL	archive: ARCHIVE_ENTRY_ACL_WRITE_ACL	
+ARCHIVE_ENTRY_ACL_WRITE_OWNER	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_WRITE_OWNER	archive: ARCHIVE_ENTRY_ACL_WRITE_OWNER	
+ARCHIVE_ENTRY_ACL_SYNCHRONIZE	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_SYNCHRONIZE	archive: ARCHIVE_ENTRY_ACL_SYNCHRONIZE	
+ARCHIVE_ENTRY_ACL_ENTRY_INHERITED	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_ENTRY_INHERITED	archive: ARCHIVE_ENTRY_ACL_ENTRY_INHERITED	
+ARCHIVE_ENTRY_ACL_ENTRY_FILE_INHERIT	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_ENTRY_FILE_INHERIT	archive: ARCHIVE_ENTRY_ACL_ENTRY_FILE_INHERIT	
+ARCHIVE_ENTRY_ACL_ENTRY_DIRECTORY_INHERIT	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_ENTRY_DIRECTORY_INHERIT	archive: ARCHIVE_ENTRY_ACL_ENTRY_DIRECTORY_INHERIT	
+ARCHIVE_ENTRY_ACL_ENTRY_NO_PROPAGATE_INHERIT	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_ENTRY_NO_PROPAGATE_INHERIT	archive: ARCHIVE_ENTRY_ACL_ENTRY_NO_PROPAGATE_INHERIT	
+ARCHIVE_ENTRY_ACL_ENTRY_INHERIT_ONLY	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_ENTRY_INHERIT_ONLY	archive: ARCHIVE_ENTRY_ACL_ENTRY_INHERIT_ONLY	
+ARCHIVE_ENTRY_ACL_ENTRY_SUCCESSFUL_ACCESS	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_ENTRY_SUCCESSFUL_ACCESS	archive: ARCHIVE_ENTRY_ACL_ENTRY_SUCCESSFUL_ACCESS	
+ARCHIVE_ENTRY_ACL_ENTRY_FAILED_ACCESS	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_ENTRY_FAILED_ACCESS	archive: ARCHIVE_ENTRY_ACL_ENTRY_FAILED_ACCESS	
+ARCHIVE_ENTRY_ACL_TYPE_ACCESS	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_TYPE_ACCESS	archive: ARCHIVE_ENTRY_ACL_TYPE_ACCESS	
+ARCHIVE_ENTRY_ACL_TYPE_DEFAULT	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_TYPE_DEFAULT	archive: ARCHIVE_ENTRY_ACL_TYPE_DEFAULT	
+ARCHIVE_ENTRY_ACL_TYPE_ALLOW	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_TYPE_ALLOW	archive: ARCHIVE_ENTRY_ACL_TYPE_ALLOW	
+ARCHIVE_ENTRY_ACL_TYPE_DENY	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_TYPE_DENY	archive: ARCHIVE_ENTRY_ACL_TYPE_DENY	
+ARCHIVE_ENTRY_ACL_TYPE_AUDIT	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_TYPE_AUDIT	archive: ARCHIVE_ENTRY_ACL_TYPE_AUDIT	
+ARCHIVE_ENTRY_ACL_TYPE_ALARM	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_TYPE_ALARM	archive: ARCHIVE_ENTRY_ACL_TYPE_ALARM	
+ARCHIVE_ENTRY_ACL_USER	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_USER	archive: ARCHIVE_ENTRY_ACL_USER	
+ARCHIVE_ENTRY_ACL_USER_OBJ	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_USER_OBJ	archive: ARCHIVE_ENTRY_ACL_USER_OBJ	
+ARCHIVE_ENTRY_ACL_GROUP	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_GROUP	archive: ARCHIVE_ENTRY_ACL_GROUP	
+ARCHIVE_ENTRY_ACL_GROUP_OBJ	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_GROUP_OBJ	archive: ARCHIVE_ENTRY_ACL_GROUP_OBJ	
+ARCHIVE_ENTRY_ACL_MASK	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_MASK	archive: ARCHIVE_ENTRY_ACL_MASK	
+ARCHIVE_ENTRY_ACL_OTHER	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_OTHER	archive: ARCHIVE_ENTRY_ACL_OTHER	
+ARCHIVE_ENTRY_ACL_EVERYONE	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_EVERYONE	archive: ARCHIVE_ENTRY_ACL_EVERYONE	
+ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID	archive: ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID	
+ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT	archive: ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT	
+ARCHIVE_ENTRY_ACL_STYLE_SOLARIS	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_STYLE_SOLARIS	archive: ARCHIVE_ENTRY_ACL_STYLE_SOLARIS	
+ARCHIVE_ENTRY_ACL_STYLE_SEPARATOR_COMMA	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_STYLE_SEPARATOR_COMMA	archive: ARCHIVE_ENTRY_ACL_STYLE_SEPARATOR_COMMA	
+ARCHIVE_ENTRY_ACL_STYLE_COMPACT	nimarchive/archive.html#ARCHIVE_ENTRY_ACL_STYLE_COMPACT	archive: ARCHIVE_ENTRY_ACL_STYLE_COMPACT	
+OLD_ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID	nimarchive/archive.html#OLD_ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID	archive: OLD_ARCHIVE_ENTRY_ACL_STYLE_EXTRA_ID	
+OLD_ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT	nimarchive/archive.html#OLD_ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT	archive: OLD_ARCHIVE_ENTRY_ACL_STYLE_MARK_DEFAULT	
+la_int64_t	nimarchive/archive.html#la_int64_t	archive: la_int64_t	
+la_ssize_t	nimarchive/archive.html#la_ssize_t	archive: la_ssize_t	
+archive	nimarchive/archive.html#archive	archive: archive	
+archive_entry	nimarchive/archive.html#archive_entry	archive: archive_entry	
+archive_read_callback	nimarchive/archive.html#archive_read_callback	archive: archive_read_callback	
+archive_skip_callback	nimarchive/archive.html#archive_skip_callback	archive: archive_skip_callback	
+archive_seek_callback	nimarchive/archive.html#archive_seek_callback	archive: archive_seek_callback	
+archive_write_callback	nimarchive/archive.html#archive_write_callback	archive: archive_write_callback	
+archive_open_callback	nimarchive/archive.html#archive_open_callback	archive: archive_open_callback	
+archive_close_callback	nimarchive/archive.html#archive_close_callback	archive: archive_close_callback	
+archive_switch_callback	nimarchive/archive.html#archive_switch_callback	archive: archive_switch_callback	
+archive_passphrase_callback	nimarchive/archive.html#archive_passphrase_callback	archive: archive_passphrase_callback	
+archive_acl	nimarchive/archive.html#archive_acl	archive: archive_acl	
+archive_entry_linkresolver	nimarchive/archive.html#archive_entry_linkresolver	archive: archive_entry_linkresolver	
+archive_version_number	nimarchive/archive.html#archive_version_number_2	archive: archive_version_number(): cint	
+archive_version_string	nimarchive/archive.html#archive_version_string	archive: archive_version_string(): cstring	
+archive_version_details	nimarchive/archive.html#archive_version_details	archive: archive_version_details(): cstring	
+archive_zlib_version	nimarchive/archive.html#archive_zlib_version	archive: archive_zlib_version(): cstring	
+archive_liblzma_version	nimarchive/archive.html#archive_liblzma_version	archive: archive_liblzma_version(): cstring	
+archive_bzlib_version	nimarchive/archive.html#archive_bzlib_version	archive: archive_bzlib_version(): cstring	
+archive_liblz4_version	nimarchive/archive.html#archive_liblz4_version	archive: archive_liblz4_version(): cstring	
+archive_libzstd_version	nimarchive/archive.html#archive_libzstd_version	archive: archive_libzstd_version(): cstring	
+archive_read_new	nimarchive/archive.html#archive_read_new	archive: archive_read_new(): ptr archive	
+archive_read_support_compression_all	nimarchive/archive.html#archive_read_support_compression_all,ptr.archive	archive: archive_read_support_compression_all(a1: ptr archive): cint	
+archive_read_support_compression_bzip2	nimarchive/archive.html#archive_read_support_compression_bzip2,ptr.archive	archive: archive_read_support_compression_bzip2(a1: ptr archive): cint	
+archive_read_support_compression_compress	nimarchive/archive.html#archive_read_support_compression_compress,ptr.archive	archive: archive_read_support_compression_compress(a1: ptr archive): cint	
+archive_read_support_compression_gzip	nimarchive/archive.html#archive_read_support_compression_gzip,ptr.archive	archive: archive_read_support_compression_gzip(a1: ptr archive): cint	
+archive_read_support_compression_lzip	nimarchive/archive.html#archive_read_support_compression_lzip,ptr.archive	archive: archive_read_support_compression_lzip(a1: ptr archive): cint	
+archive_read_support_compression_lzma	nimarchive/archive.html#archive_read_support_compression_lzma,ptr.archive	archive: archive_read_support_compression_lzma(a1: ptr archive): cint	
+archive_read_support_compression_none	nimarchive/archive.html#archive_read_support_compression_none,ptr.archive	archive: archive_read_support_compression_none(a1: ptr archive): cint	
+archive_read_support_compression_program	nimarchive/archive.html#archive_read_support_compression_program,ptr.archive,cstring	archive: archive_read_support_compression_program(a1: ptr archive; command: cstring): cint	
+archive_read_support_compression_program_signature	nimarchive/archive.html#archive_read_support_compression_program_signature,ptr.archive,cstring,pointer,cuint	archive: archive_read_support_compression_program_signature(a1: ptr archive; a2: cstring;\n    a3: pointer; a4: cuint): cint	
+archive_read_support_compression_rpm	nimarchive/archive.html#archive_read_support_compression_rpm,ptr.archive	archive: archive_read_support_compression_rpm(a1: ptr archive): cint	
+archive_read_support_compression_uu	nimarchive/archive.html#archive_read_support_compression_uu,ptr.archive	archive: archive_read_support_compression_uu(a1: ptr archive): cint	
+archive_read_support_compression_xz	nimarchive/archive.html#archive_read_support_compression_xz,ptr.archive	archive: archive_read_support_compression_xz(a1: ptr archive): cint	
+archive_read_support_filter_all	nimarchive/archive.html#archive_read_support_filter_all,ptr.archive	archive: archive_read_support_filter_all(a1: ptr archive): cint	
+archive_read_support_filter_bzip2	nimarchive/archive.html#archive_read_support_filter_bzip2,ptr.archive	archive: archive_read_support_filter_bzip2(a1: ptr archive): cint	
+archive_read_support_filter_compress	nimarchive/archive.html#archive_read_support_filter_compress,ptr.archive	archive: archive_read_support_filter_compress(a1: ptr archive): cint	
+archive_read_support_filter_gzip	nimarchive/archive.html#archive_read_support_filter_gzip,ptr.archive	archive: archive_read_support_filter_gzip(a1: ptr archive): cint	
+archive_read_support_filter_grzip	nimarchive/archive.html#archive_read_support_filter_grzip,ptr.archive	archive: archive_read_support_filter_grzip(a1: ptr archive): cint	
+archive_read_support_filter_lrzip	nimarchive/archive.html#archive_read_support_filter_lrzip,ptr.archive	archive: archive_read_support_filter_lrzip(a1: ptr archive): cint	
+archive_read_support_filter_lz4	nimarchive/archive.html#archive_read_support_filter_lz4,ptr.archive	archive: archive_read_support_filter_lz4(a1: ptr archive): cint	
+archive_read_support_filter_lzip	nimarchive/archive.html#archive_read_support_filter_lzip,ptr.archive	archive: archive_read_support_filter_lzip(a1: ptr archive): cint	
+archive_read_support_filter_lzma	nimarchive/archive.html#archive_read_support_filter_lzma,ptr.archive	archive: archive_read_support_filter_lzma(a1: ptr archive): cint	
+archive_read_support_filter_lzop	nimarchive/archive.html#archive_read_support_filter_lzop,ptr.archive	archive: archive_read_support_filter_lzop(a1: ptr archive): cint	
+archive_read_support_filter_none	nimarchive/archive.html#archive_read_support_filter_none,ptr.archive	archive: archive_read_support_filter_none(a1: ptr archive): cint	
+archive_read_support_filter_program	nimarchive/archive.html#archive_read_support_filter_program,ptr.archive,cstring	archive: archive_read_support_filter_program(a1: ptr archive; command: cstring): cint	
+archive_read_support_filter_program_signature	nimarchive/archive.html#archive_read_support_filter_program_signature,ptr.archive,cstring,pointer,cuint	archive: archive_read_support_filter_program_signature(a1: ptr archive; a2: cstring;\n    a3: pointer; a4: cuint): cint	
+archive_read_support_filter_rpm	nimarchive/archive.html#archive_read_support_filter_rpm,ptr.archive	archive: archive_read_support_filter_rpm(a1: ptr archive): cint	
+archive_read_support_filter_uu	nimarchive/archive.html#archive_read_support_filter_uu,ptr.archive	archive: archive_read_support_filter_uu(a1: ptr archive): cint	
+archive_read_support_filter_xz	nimarchive/archive.html#archive_read_support_filter_xz,ptr.archive	archive: archive_read_support_filter_xz(a1: ptr archive): cint	
+archive_read_support_filter_zstd	nimarchive/archive.html#archive_read_support_filter_zstd,ptr.archive	archive: archive_read_support_filter_zstd(a1: ptr archive): cint	
+archive_read_support_format_7zip	nimarchive/archive.html#archive_read_support_format_7zip,ptr.archive	archive: archive_read_support_format_7zip(a1: ptr archive): cint	
+archive_read_support_format_all	nimarchive/archive.html#archive_read_support_format_all,ptr.archive	archive: archive_read_support_format_all(a1: ptr archive): cint	
+archive_read_support_format_ar	nimarchive/archive.html#archive_read_support_format_ar,ptr.archive	archive: archive_read_support_format_ar(a1: ptr archive): cint	
+archive_read_support_format_by_code	nimarchive/archive.html#archive_read_support_format_by_code,ptr.archive,cint	archive: archive_read_support_format_by_code(a1: ptr archive; a2: cint): cint	
+archive_read_support_format_cab	nimarchive/archive.html#archive_read_support_format_cab,ptr.archive	archive: archive_read_support_format_cab(a1: ptr archive): cint	
+archive_read_support_format_cpio	nimarchive/archive.html#archive_read_support_format_cpio,ptr.archive	archive: archive_read_support_format_cpio(a1: ptr archive): cint	
+archive_read_support_format_empty	nimarchive/archive.html#archive_read_support_format_empty,ptr.archive	archive: archive_read_support_format_empty(a1: ptr archive): cint	
+archive_read_support_format_gnutar	nimarchive/archive.html#archive_read_support_format_gnutar,ptr.archive	archive: archive_read_support_format_gnutar(a1: ptr archive): cint	
+archive_read_support_format_iso9660	nimarchive/archive.html#archive_read_support_format_iso9660,ptr.archive	archive: archive_read_support_format_iso9660(a1: ptr archive): cint	
+archive_read_support_format_lha	nimarchive/archive.html#archive_read_support_format_lha,ptr.archive	archive: archive_read_support_format_lha(a1: ptr archive): cint	
+archive_read_support_format_mtree	nimarchive/archive.html#archive_read_support_format_mtree,ptr.archive	archive: archive_read_support_format_mtree(a1: ptr archive): cint	
+archive_read_support_format_rar	nimarchive/archive.html#archive_read_support_format_rar,ptr.archive	archive: archive_read_support_format_rar(a1: ptr archive): cint	
+archive_read_support_format_rar5	nimarchive/archive.html#archive_read_support_format_rar5,ptr.archive	archive: archive_read_support_format_rar5(a1: ptr archive): cint	
+archive_read_support_format_raw	nimarchive/archive.html#archive_read_support_format_raw,ptr.archive	archive: archive_read_support_format_raw(a1: ptr archive): cint	
+archive_read_support_format_tar	nimarchive/archive.html#archive_read_support_format_tar,ptr.archive	archive: archive_read_support_format_tar(a1: ptr archive): cint	
+archive_read_support_format_warc	nimarchive/archive.html#archive_read_support_format_warc,ptr.archive	archive: archive_read_support_format_warc(a1: ptr archive): cint	
+archive_read_support_format_xar	nimarchive/archive.html#archive_read_support_format_xar,ptr.archive	archive: archive_read_support_format_xar(a1: ptr archive): cint	
+archive_read_support_format_zip	nimarchive/archive.html#archive_read_support_format_zip,ptr.archive	archive: archive_read_support_format_zip(a1: ptr archive): cint	
+archive_read_support_format_zip_streamable	nimarchive/archive.html#archive_read_support_format_zip_streamable,ptr.archive	archive: archive_read_support_format_zip_streamable(a1: ptr archive): cint	
+archive_read_support_format_zip_seekable	nimarchive/archive.html#archive_read_support_format_zip_seekable,ptr.archive	archive: archive_read_support_format_zip_seekable(a1: ptr archive): cint	
+archive_read_set_format	nimarchive/archive.html#archive_read_set_format,ptr.archive,cint	archive: archive_read_set_format(a1: ptr archive; a2: cint): cint	
+archive_read_append_filter	nimarchive/archive.html#archive_read_append_filter,ptr.archive,cint	archive: archive_read_append_filter(a1: ptr archive; a2: cint): cint	
+archive_read_append_filter_program	nimarchive/archive.html#archive_read_append_filter_program,ptr.archive,cstring	archive: archive_read_append_filter_program(a1: ptr archive; a2: cstring): cint	
+archive_read_append_filter_program_signature	nimarchive/archive.html#archive_read_append_filter_program_signature,ptr.archive,cstring,pointer,cuint	archive: archive_read_append_filter_program_signature(a1: ptr archive; a2: cstring;\n    a3: pointer; a4: cuint): cint	
+archive_read_set_open_callback	nimarchive/archive.html#archive_read_set_open_callback,ptr.archive,ptr.archive_open_callback	archive: archive_read_set_open_callback(a1: ptr archive; a2: ptr archive_open_callback): cint	
+archive_read_set_read_callback	nimarchive/archive.html#archive_read_set_read_callback,ptr.archive,ptr.archive_read_callback	archive: archive_read_set_read_callback(a1: ptr archive; a2: ptr archive_read_callback): cint	
+archive_read_set_seek_callback	nimarchive/archive.html#archive_read_set_seek_callback,ptr.archive,ptr.archive_seek_callback	archive: archive_read_set_seek_callback(a1: ptr archive; a2: ptr archive_seek_callback): cint	
+archive_read_set_skip_callback	nimarchive/archive.html#archive_read_set_skip_callback,ptr.archive,ptr.archive_skip_callback	archive: archive_read_set_skip_callback(a1: ptr archive; a2: ptr archive_skip_callback): cint	
+archive_read_set_close_callback	nimarchive/archive.html#archive_read_set_close_callback,ptr.archive,ptr.archive_close_callback	archive: archive_read_set_close_callback(a1: ptr archive; a2: ptr archive_close_callback): cint	
+archive_read_set_switch_callback	nimarchive/archive.html#archive_read_set_switch_callback,ptr.archive,ptr.archive_switch_callback	archive: archive_read_set_switch_callback(a1: ptr archive; a2: ptr archive_switch_callback): cint	
+archive_read_set_callback_data	nimarchive/archive.html#archive_read_set_callback_data,ptr.archive,pointer	archive: archive_read_set_callback_data(a1: ptr archive; a2: pointer): cint	
+archive_read_set_callback_data2	nimarchive/archive.html#archive_read_set_callback_data2,ptr.archive,pointer,cuint	archive: archive_read_set_callback_data2(a1: ptr archive; a2: pointer; a3: cuint): cint	
+archive_read_add_callback_data	nimarchive/archive.html#archive_read_add_callback_data,ptr.archive,pointer,cuint	archive: archive_read_add_callback_data(a1: ptr archive; a2: pointer; a3: cuint): cint	
+archive_read_append_callback_data	nimarchive/archive.html#archive_read_append_callback_data,ptr.archive,pointer	archive: archive_read_append_callback_data(a1: ptr archive; a2: pointer): cint	
+archive_read_prepend_callback_data	nimarchive/archive.html#archive_read_prepend_callback_data,ptr.archive,pointer	archive: archive_read_prepend_callback_data(a1: ptr archive; a2: pointer): cint	
+archive_read_open1	nimarchive/archive.html#archive_read_open1,ptr.archive	archive: archive_read_open1(a1: ptr archive): cint	
+archive_read_open	nimarchive/archive.html#archive_read_open,ptr.archive,pointer,ptr.archive_open_callback,ptr.archive_read_callback,ptr.archive_close_callback	archive: archive_read_open(a1: ptr archive; client_data: pointer;\n                  a2: ptr archive_open_callback; a3: ptr archive_read_callback;\n                  a4: ptr archive_close_callback): cint	
+archive_read_open2	nimarchive/archive.html#archive_read_open2,ptr.archive,pointer,ptr.archive_open_callback,ptr.archive_read_callback,ptr.archive_skip_callback,ptr.archive_close_callback	archive: archive_read_open2(a1: ptr archive; client_data: pointer;\n                   a2: ptr archive_open_callback; a3: ptr archive_read_callback;\n                   a4: ptr archive_skip_callback; a5: ptr archive_close_callback): cint	
+archive_read_open_filename	nimarchive/archive.html#archive_read_open_filename,ptr.archive,cstring,cuint	archive: archive_read_open_filename(a1: ptr archive; filename: cstring; block_size: cuint): cint	
+archive_read_open_filenames	nimarchive/archive.html#archive_read_open_filenames,ptr.archive,ptr.cstring,cuint	archive: archive_read_open_filenames(a1: ptr archive; filenames: ptr cstring; block_size: cuint): cint	
+archive_read_open_filename_w	nimarchive/archive.html#archive_read_open_filename_w,ptr.archive,ptr.wchar_t,cuint	archive: archive_read_open_filename_w(a1: ptr archive; filename: ptr wchar_t; block_size: cuint): cint	
+archive_read_open_memory	nimarchive/archive.html#archive_read_open_memory,ptr.archive,pointer,cuint	archive: archive_read_open_memory(a1: ptr archive; buff: pointer; size: cuint): cint	
+archive_read_open_memory2	nimarchive/archive.html#archive_read_open_memory2,ptr.archive,pointer,cuint,cuint	archive: archive_read_open_memory2(a: ptr archive; buff: pointer; size: cuint; read_size: cuint): cint	
+archive_read_open_fd	nimarchive/archive.html#archive_read_open_fd,ptr.archive,cint,cuint	archive: archive_read_open_fd(a1: ptr archive; fd: cint; block_size: cuint): cint	
+archive_read_open_FILE	nimarchive/archive.html#archive_read_open_FILE,ptr.archive,ptr.File	archive: archive_read_open_FILE(a1: ptr archive; file: ptr File): cint	
+archive_read_next_header	nimarchive/archive.html#archive_read_next_header,ptr.archive,ptr.ptr.archive_entry	archive: archive_read_next_header(a1: ptr archive; a2: ptr ptr archive_entry): cint	
+archive_read_next_header2	nimarchive/archive.html#archive_read_next_header2,ptr.archive,ptr.archive_entry	archive: archive_read_next_header2(a1: ptr archive; a2: ptr archive_entry): cint	
+archive_read_header_position	nimarchive/archive.html#archive_read_header_position,ptr.archive	archive: archive_read_header_position(a1: ptr archive): la_int64_t	
+archive_read_has_encrypted_entries	nimarchive/archive.html#archive_read_has_encrypted_entries,ptr.archive	archive: archive_read_has_encrypted_entries(a1: ptr archive): cint	
+archive_read_format_capabilities	nimarchive/archive.html#archive_read_format_capabilities,ptr.archive	archive: archive_read_format_capabilities(a1: ptr archive): cint	
+archive_read_data	nimarchive/archive.html#archive_read_data,ptr.archive,pointer,cuint	archive: archive_read_data(a1: ptr archive; a2: pointer; a3: cuint): la_ssize_t	
+archive_seek_data	nimarchive/archive.html#archive_seek_data,ptr.archive,la_int64_t,cint	archive: archive_seek_data(a1: ptr archive; a2: la_int64_t; a3: cint): la_int64_t	
+archive_read_data_block	nimarchive/archive.html#archive_read_data_block,ptr.archive,ptr.pointer,ptr.cuint,ptr.la_int64_t	archive: archive_read_data_block(a: ptr archive; buff: ptr pointer; size: ptr cuint;\n                        offset: ptr la_int64_t): cint	
+archive_read_data_skip	nimarchive/archive.html#archive_read_data_skip,ptr.archive	archive: archive_read_data_skip(a1: ptr archive): cint	
+archive_read_data_into_fd	nimarchive/archive.html#archive_read_data_into_fd,ptr.archive,cint	archive: archive_read_data_into_fd(a1: ptr archive; fd: cint): cint	
+archive_read_set_format_option	nimarchive/archive.html#archive_read_set_format_option,ptr.archive,cstring,cstring,cstring	archive: archive_read_set_format_option(a: ptr archive; m: cstring; o: cstring; v: cstring): cint	
+archive_read_set_filter_option	nimarchive/archive.html#archive_read_set_filter_option,ptr.archive,cstring,cstring,cstring	archive: archive_read_set_filter_option(a: ptr archive; m: cstring; o: cstring; v: cstring): cint	
+archive_read_set_option	nimarchive/archive.html#archive_read_set_option,ptr.archive,cstring,cstring,cstring	archive: archive_read_set_option(a: ptr archive; m: cstring; o: cstring; v: cstring): cint	
+archive_read_set_options	nimarchive/archive.html#archive_read_set_options,ptr.archive,cstring	archive: archive_read_set_options(a: ptr archive; opts: cstring): cint	
+archive_read_add_passphrase	nimarchive/archive.html#archive_read_add_passphrase,ptr.archive,cstring	archive: archive_read_add_passphrase(a1: ptr archive; a2: cstring): cint	
+archive_read_set_passphrase_callback	nimarchive/archive.html#archive_read_set_passphrase_callback,ptr.archive,pointer,ptr.archive_passphrase_callback	archive: archive_read_set_passphrase_callback(a1: ptr archive; client_data: pointer;\n                                     a2: ptr archive_passphrase_callback): cint	
+archive_read_extract	nimarchive/archive.html#archive_read_extract,ptr.archive,ptr.archive_entry,cint	archive: archive_read_extract(a1: ptr archive; a2: ptr archive_entry; flags: cint): cint	
+archive_read_extract2	nimarchive/archive.html#archive_read_extract2,ptr.archive,ptr.archive_entry,ptr.archive	archive: archive_read_extract2(a1: ptr archive; a2: ptr archive_entry; a3: ptr archive): cint	
+archive_read_extract_set_skip_file	nimarchive/archive.html#archive_read_extract_set_skip_file,ptr.archive,la_int64_t,la_int64_t	archive: archive_read_extract_set_skip_file(a1: ptr archive; a2: la_int64_t; a3: la_int64_t)	
+archive_read_close	nimarchive/archive.html#archive_read_close,ptr.archive	archive: archive_read_close(a1: ptr archive): cint	
+archive_read_free	nimarchive/archive.html#archive_read_free,ptr.archive	archive: archive_read_free(a1: ptr archive): cint	
+archive_read_finish	nimarchive/archive.html#archive_read_finish,ptr.archive	archive: archive_read_finish(a1: ptr archive): cint	
+archive_write_new	nimarchive/archive.html#archive_write_new	archive: archive_write_new(): ptr archive	
+archive_write_set_bytes_per_block	nimarchive/archive.html#archive_write_set_bytes_per_block,ptr.archive,cint	archive: archive_write_set_bytes_per_block(a1: ptr archive; bytes_per_block: cint): cint	
+archive_write_get_bytes_per_block	nimarchive/archive.html#archive_write_get_bytes_per_block,ptr.archive	archive: archive_write_get_bytes_per_block(a1: ptr archive): cint	
+archive_write_set_bytes_in_last_block	nimarchive/archive.html#archive_write_set_bytes_in_last_block,ptr.archive,cint	archive: archive_write_set_bytes_in_last_block(a1: ptr archive; bytes_in_last_block: cint): cint	
+archive_write_get_bytes_in_last_block	nimarchive/archive.html#archive_write_get_bytes_in_last_block,ptr.archive	archive: archive_write_get_bytes_in_last_block(a1: ptr archive): cint	
+archive_write_set_skip_file	nimarchive/archive.html#archive_write_set_skip_file,ptr.archive,la_int64_t,la_int64_t	archive: archive_write_set_skip_file(a1: ptr archive; a2: la_int64_t; a3: la_int64_t): cint	
+archive_write_set_compression_bzip2	nimarchive/archive.html#archive_write_set_compression_bzip2,ptr.archive	archive: archive_write_set_compression_bzip2(a1: ptr archive): cint	
+archive_write_set_compression_compress	nimarchive/archive.html#archive_write_set_compression_compress,ptr.archive	archive: archive_write_set_compression_compress(a1: ptr archive): cint	
+archive_write_set_compression_gzip	nimarchive/archive.html#archive_write_set_compression_gzip,ptr.archive	archive: archive_write_set_compression_gzip(a1: ptr archive): cint	
+archive_write_set_compression_lzip	nimarchive/archive.html#archive_write_set_compression_lzip,ptr.archive	archive: archive_write_set_compression_lzip(a1: ptr archive): cint	
+archive_write_set_compression_lzma	nimarchive/archive.html#archive_write_set_compression_lzma,ptr.archive	archive: archive_write_set_compression_lzma(a1: ptr archive): cint	
+archive_write_set_compression_none	nimarchive/archive.html#archive_write_set_compression_none,ptr.archive	archive: archive_write_set_compression_none(a1: ptr archive): cint	
+archive_write_set_compression_program	nimarchive/archive.html#archive_write_set_compression_program,ptr.archive,cstring	archive: archive_write_set_compression_program(a1: ptr archive; cmd: cstring): cint	
+archive_write_set_compression_xz	nimarchive/archive.html#archive_write_set_compression_xz,ptr.archive	archive: archive_write_set_compression_xz(a1: ptr archive): cint	
+archive_write_add_filter	nimarchive/archive.html#archive_write_add_filter,ptr.archive,cint	archive: archive_write_add_filter(a1: ptr archive; filter_code: cint): cint	
+archive_write_add_filter_by_name	nimarchive/archive.html#archive_write_add_filter_by_name,ptr.archive,cstring	archive: archive_write_add_filter_by_name(a1: ptr archive; name: cstring): cint	
+archive_write_add_filter_b64encode	nimarchive/archive.html#archive_write_add_filter_b64encode,ptr.archive	archive: archive_write_add_filter_b64encode(a1: ptr archive): cint	
+archive_write_add_filter_bzip2	nimarchive/archive.html#archive_write_add_filter_bzip2,ptr.archive	archive: archive_write_add_filter_bzip2(a1: ptr archive): cint	
+archive_write_add_filter_compress	nimarchive/archive.html#archive_write_add_filter_compress,ptr.archive	archive: archive_write_add_filter_compress(a1: ptr archive): cint	
+archive_write_add_filter_grzip	nimarchive/archive.html#archive_write_add_filter_grzip,ptr.archive	archive: archive_write_add_filter_grzip(a1: ptr archive): cint	
+archive_write_add_filter_gzip	nimarchive/archive.html#archive_write_add_filter_gzip,ptr.archive	archive: archive_write_add_filter_gzip(a1: ptr archive): cint	
+archive_write_add_filter_lrzip	nimarchive/archive.html#archive_write_add_filter_lrzip,ptr.archive	archive: archive_write_add_filter_lrzip(a1: ptr archive): cint	
+archive_write_add_filter_lz4	nimarchive/archive.html#archive_write_add_filter_lz4,ptr.archive	archive: archive_write_add_filter_lz4(a1: ptr archive): cint	
+archive_write_add_filter_lzip	nimarchive/archive.html#archive_write_add_filter_lzip,ptr.archive	archive: archive_write_add_filter_lzip(a1: ptr archive): cint	
+archive_write_add_filter_lzma	nimarchive/archive.html#archive_write_add_filter_lzma,ptr.archive	archive: archive_write_add_filter_lzma(a1: ptr archive): cint	
+archive_write_add_filter_lzop	nimarchive/archive.html#archive_write_add_filter_lzop,ptr.archive	archive: archive_write_add_filter_lzop(a1: ptr archive): cint	
+archive_write_add_filter_none	nimarchive/archive.html#archive_write_add_filter_none,ptr.archive	archive: archive_write_add_filter_none(a1: ptr archive): cint	
+archive_write_add_filter_program	nimarchive/archive.html#archive_write_add_filter_program,ptr.archive,cstring	archive: archive_write_add_filter_program(a1: ptr archive; cmd: cstring): cint	
+archive_write_add_filter_uuencode	nimarchive/archive.html#archive_write_add_filter_uuencode,ptr.archive	archive: archive_write_add_filter_uuencode(a1: ptr archive): cint	
+archive_write_add_filter_xz	nimarchive/archive.html#archive_write_add_filter_xz,ptr.archive	archive: archive_write_add_filter_xz(a1: ptr archive): cint	
+archive_write_add_filter_zstd	nimarchive/archive.html#archive_write_add_filter_zstd,ptr.archive	archive: archive_write_add_filter_zstd(a1: ptr archive): cint	
+archive_write_set_format	nimarchive/archive.html#archive_write_set_format,ptr.archive,cint	archive: archive_write_set_format(a1: ptr archive; format_code: cint): cint	
+archive_write_set_format_by_name	nimarchive/archive.html#archive_write_set_format_by_name,ptr.archive,cstring	archive: archive_write_set_format_by_name(a1: ptr archive; name: cstring): cint	
+archive_write_set_format_7zip	nimarchive/archive.html#archive_write_set_format_7zip,ptr.archive	archive: archive_write_set_format_7zip(a1: ptr archive): cint	
+archive_write_set_format_ar_bsd	nimarchive/archive.html#archive_write_set_format_ar_bsd,ptr.archive	archive: archive_write_set_format_ar_bsd(a1: ptr archive): cint	
+archive_write_set_format_ar_svr4	nimarchive/archive.html#archive_write_set_format_ar_svr4,ptr.archive	archive: archive_write_set_format_ar_svr4(a1: ptr archive): cint	
+archive_write_set_format_cpio	nimarchive/archive.html#archive_write_set_format_cpio,ptr.archive	archive: archive_write_set_format_cpio(a1: ptr archive): cint	
+archive_write_set_format_cpio_newc	nimarchive/archive.html#archive_write_set_format_cpio_newc,ptr.archive	archive: archive_write_set_format_cpio_newc(a1: ptr archive): cint	
+archive_write_set_format_gnutar	nimarchive/archive.html#archive_write_set_format_gnutar,ptr.archive	archive: archive_write_set_format_gnutar(a1: ptr archive): cint	
+archive_write_set_format_iso9660	nimarchive/archive.html#archive_write_set_format_iso9660,ptr.archive	archive: archive_write_set_format_iso9660(a1: ptr archive): cint	
+archive_write_set_format_mtree	nimarchive/archive.html#archive_write_set_format_mtree,ptr.archive	archive: archive_write_set_format_mtree(a1: ptr archive): cint	
+archive_write_set_format_mtree_classic	nimarchive/archive.html#archive_write_set_format_mtree_classic,ptr.archive	archive: archive_write_set_format_mtree_classic(a1: ptr archive): cint	
+archive_write_set_format_pax	nimarchive/archive.html#archive_write_set_format_pax,ptr.archive	archive: archive_write_set_format_pax(a1: ptr archive): cint	
+archive_write_set_format_pax_restricted	nimarchive/archive.html#archive_write_set_format_pax_restricted,ptr.archive	archive: archive_write_set_format_pax_restricted(a1: ptr archive): cint	
+archive_write_set_format_raw	nimarchive/archive.html#archive_write_set_format_raw,ptr.archive	archive: archive_write_set_format_raw(a1: ptr archive): cint	
+archive_write_set_format_shar	nimarchive/archive.html#archive_write_set_format_shar,ptr.archive	archive: archive_write_set_format_shar(a1: ptr archive): cint	
+archive_write_set_format_shar_dump	nimarchive/archive.html#archive_write_set_format_shar_dump,ptr.archive	archive: archive_write_set_format_shar_dump(a1: ptr archive): cint	
+archive_write_set_format_ustar	nimarchive/archive.html#archive_write_set_format_ustar,ptr.archive	archive: archive_write_set_format_ustar(a1: ptr archive): cint	
+archive_write_set_format_v7tar	nimarchive/archive.html#archive_write_set_format_v7tar,ptr.archive	archive: archive_write_set_format_v7tar(a1: ptr archive): cint	
+archive_write_set_format_warc	nimarchive/archive.html#archive_write_set_format_warc,ptr.archive	archive: archive_write_set_format_warc(a1: ptr archive): cint	
+archive_write_set_format_xar	nimarchive/archive.html#archive_write_set_format_xar,ptr.archive	archive: archive_write_set_format_xar(a1: ptr archive): cint	
+archive_write_set_format_zip	nimarchive/archive.html#archive_write_set_format_zip,ptr.archive	archive: archive_write_set_format_zip(a1: ptr archive): cint	
+archive_write_set_format_filter_by_ext	nimarchive/archive.html#archive_write_set_format_filter_by_ext,ptr.archive,cstring	archive: archive_write_set_format_filter_by_ext(a: ptr archive; filename: cstring): cint	
+archive_write_set_format_filter_by_ext_def	nimarchive/archive.html#archive_write_set_format_filter_by_ext_def,ptr.archive,cstring,cstring	archive: archive_write_set_format_filter_by_ext_def(a: ptr archive; filename: cstring;\n    def_ext: cstring): cint	
+archive_write_zip_set_compression_deflate	nimarchive/archive.html#archive_write_zip_set_compression_deflate,ptr.archive	archive: archive_write_zip_set_compression_deflate(a1: ptr archive): cint	
+archive_write_zip_set_compression_store	nimarchive/archive.html#archive_write_zip_set_compression_store,ptr.archive	archive: archive_write_zip_set_compression_store(a1: ptr archive): cint	
+archive_write_open	nimarchive/archive.html#archive_write_open,ptr.archive,pointer,ptr.archive_open_callback,ptr.archive_write_callback,ptr.archive_close_callback	archive: archive_write_open(a1: ptr archive; a2: pointer; a3: ptr archive_open_callback;\n                   a4: ptr archive_write_callback; a5: ptr archive_close_callback): cint	
+archive_write_open_fd	nimarchive/archive.html#archive_write_open_fd,ptr.archive,cint	archive: archive_write_open_fd(a1: ptr archive; fd: cint): cint	
+archive_write_open_filename	nimarchive/archive.html#archive_write_open_filename,ptr.archive,cstring	archive: archive_write_open_filename(a1: ptr archive; file: cstring): cint	
+archive_write_open_filename_w	nimarchive/archive.html#archive_write_open_filename_w,ptr.archive,ptr.wchar_t	archive: archive_write_open_filename_w(a1: ptr archive; file: ptr wchar_t): cint	
+archive_write_open_FILE	nimarchive/archive.html#archive_write_open_FILE,ptr.archive,ptr.File	archive: archive_write_open_FILE(a1: ptr archive; a2: ptr File): cint	
+archive_write_open_memory	nimarchive/archive.html#archive_write_open_memory,ptr.archive,pointer,cuint,ptr.cuint	archive: archive_write_open_memory(a1: ptr archive; buffer: pointer; buffSize: cuint;\n                          used: ptr cuint): cint	
+archive_write_header	nimarchive/archive.html#archive_write_header,ptr.archive,ptr.archive_entry	archive: archive_write_header(a1: ptr archive; a2: ptr archive_entry): cint	
+archive_write_data	nimarchive/archive.html#archive_write_data,ptr.archive,pointer,cuint	archive: archive_write_data(a1: ptr archive; a2: pointer; a3: cuint): la_ssize_t	
+archive_write_data_block	nimarchive/archive.html#archive_write_data_block,ptr.archive,pointer,cuint,la_int64_t	archive: archive_write_data_block(a1: ptr archive; a2: pointer; a3: cuint; a4: la_int64_t): la_ssize_t	
+archive_write_finish_entry	nimarchive/archive.html#archive_write_finish_entry,ptr.archive	archive: archive_write_finish_entry(a1: ptr archive): cint	
+archive_write_close	nimarchive/archive.html#archive_write_close,ptr.archive	archive: archive_write_close(a1: ptr archive): cint	
+archive_write_fail	nimarchive/archive.html#archive_write_fail,ptr.archive	archive: archive_write_fail(a1: ptr archive): cint	
+archive_write_free	nimarchive/archive.html#archive_write_free,ptr.archive	archive: archive_write_free(a1: ptr archive): cint	
+archive_write_finish	nimarchive/archive.html#archive_write_finish,ptr.archive	archive: archive_write_finish(a1: ptr archive): cint	
+archive_write_set_format_option	nimarchive/archive.html#archive_write_set_format_option,ptr.archive,cstring,cstring,cstring	archive: archive_write_set_format_option(a: ptr archive; m: cstring; o: cstring; v: cstring): cint	
+archive_write_set_filter_option	nimarchive/archive.html#archive_write_set_filter_option,ptr.archive,cstring,cstring,cstring	archive: archive_write_set_filter_option(a: ptr archive; m: cstring; o: cstring; v: cstring): cint	
+archive_write_set_option	nimarchive/archive.html#archive_write_set_option,ptr.archive,cstring,cstring,cstring	archive: archive_write_set_option(a: ptr archive; m: cstring; o: cstring; v: cstring): cint	
+archive_write_set_options	nimarchive/archive.html#archive_write_set_options,ptr.archive,cstring	archive: archive_write_set_options(a: ptr archive; opts: cstring): cint	
+archive_write_set_passphrase	nimarchive/archive.html#archive_write_set_passphrase,ptr.archive,cstring	archive: archive_write_set_passphrase(a: ptr archive; p: cstring): cint	
+archive_write_set_passphrase_callback	nimarchive/archive.html#archive_write_set_passphrase_callback,ptr.archive,pointer,ptr.archive_passphrase_callback	archive: archive_write_set_passphrase_callback(a1: ptr archive; client_data: pointer;\n                                      a2: ptr archive_passphrase_callback): cint	
+archive_write_disk_new	nimarchive/archive.html#archive_write_disk_new	archive: archive_write_disk_new(): ptr archive	
+archive_write_disk_set_skip_file	nimarchive/archive.html#archive_write_disk_set_skip_file,ptr.archive,la_int64_t,la_int64_t	archive: archive_write_disk_set_skip_file(a1: ptr archive; a2: la_int64_t; a3: la_int64_t): cint	
+archive_write_disk_set_options	nimarchive/archive.html#archive_write_disk_set_options,ptr.archive,cint	archive: archive_write_disk_set_options(a1: ptr archive; flags: cint): cint	
+archive_write_disk_set_standard_lookup	nimarchive/archive.html#archive_write_disk_set_standard_lookup,ptr.archive	archive: archive_write_disk_set_standard_lookup(a1: ptr archive): cint	
+archive_write_disk_gid	nimarchive/archive.html#archive_write_disk_gid,ptr.archive,cstring,la_int64_t	archive: archive_write_disk_gid(a1: ptr archive; a2: cstring; a3: la_int64_t): la_int64_t	
+archive_write_disk_uid	nimarchive/archive.html#archive_write_disk_uid,ptr.archive,cstring,la_int64_t	archive: archive_write_disk_uid(a1: ptr archive; a2: cstring; a3: la_int64_t): la_int64_t	
+archive_read_disk_new	nimarchive/archive.html#archive_read_disk_new	archive: archive_read_disk_new(): ptr archive	
+archive_read_disk_set_symlink_logical	nimarchive/archive.html#archive_read_disk_set_symlink_logical,ptr.archive	archive: archive_read_disk_set_symlink_logical(a1: ptr archive): cint	
+archive_read_disk_set_symlink_physical	nimarchive/archive.html#archive_read_disk_set_symlink_physical,ptr.archive	archive: archive_read_disk_set_symlink_physical(a1: ptr archive): cint	
+archive_read_disk_set_symlink_hybrid	nimarchive/archive.html#archive_read_disk_set_symlink_hybrid,ptr.archive	archive: archive_read_disk_set_symlink_hybrid(a1: ptr archive): cint	
+archive_read_disk_entry_from_file	nimarchive/archive.html#archive_read_disk_entry_from_file,ptr.archive,ptr.archive_entry,cint,ptr.stat	archive: archive_read_disk_entry_from_file(a1: ptr archive; a2: ptr archive_entry; a3: cint;\n                                  a4: ptr stat): cint	
+archive_read_disk_gname	nimarchive/archive.html#archive_read_disk_gname,ptr.archive,la_int64_t	archive: archive_read_disk_gname(a1: ptr archive; a2: la_int64_t): cstring	
+archive_read_disk_uname	nimarchive/archive.html#archive_read_disk_uname,ptr.archive,la_int64_t	archive: archive_read_disk_uname(a1: ptr archive; a2: la_int64_t): cstring	
+archive_read_disk_set_standard_lookup	nimarchive/archive.html#archive_read_disk_set_standard_lookup,ptr.archive	archive: archive_read_disk_set_standard_lookup(a1: ptr archive): cint	
+archive_read_disk_open	nimarchive/archive.html#archive_read_disk_open,ptr.archive,cstring	archive: archive_read_disk_open(a1: ptr archive; a2: cstring): cint	
+archive_read_disk_open_w	nimarchive/archive.html#archive_read_disk_open_w,ptr.archive,ptr.wchar_t	archive: archive_read_disk_open_w(a1: ptr archive; a2: ptr wchar_t): cint	
+archive_read_disk_descend	nimarchive/archive.html#archive_read_disk_descend,ptr.archive	archive: archive_read_disk_descend(a1: ptr archive): cint	
+archive_read_disk_can_descend	nimarchive/archive.html#archive_read_disk_can_descend,ptr.archive	archive: archive_read_disk_can_descend(a1: ptr archive): cint	
+archive_read_disk_current_filesystem	nimarchive/archive.html#archive_read_disk_current_filesystem,ptr.archive	archive: archive_read_disk_current_filesystem(a1: ptr archive): cint	
+archive_read_disk_current_filesystem_is_synthetic	nimarchive/archive.html#archive_read_disk_current_filesystem_is_synthetic,ptr.archive	archive: archive_read_disk_current_filesystem_is_synthetic(a1: ptr archive): cint	
+archive_read_disk_current_filesystem_is_remote	nimarchive/archive.html#archive_read_disk_current_filesystem_is_remote,ptr.archive	archive: archive_read_disk_current_filesystem_is_remote(a1: ptr archive): cint	
+archive_read_disk_set_atime_restored	nimarchive/archive.html#archive_read_disk_set_atime_restored,ptr.archive	archive: archive_read_disk_set_atime_restored(a1: ptr archive): cint	
+archive_read_disk_set_behavior	nimarchive/archive.html#archive_read_disk_set_behavior,ptr.archive,cint	archive: archive_read_disk_set_behavior(a1: ptr archive; flags: cint): cint	
+archive_free	nimarchive/archive.html#archive_free,ptr.archive	archive: archive_free(a1: ptr archive): cint	
+archive_filter_count	nimarchive/archive.html#archive_filter_count,ptr.archive	archive: archive_filter_count(a1: ptr archive): cint	
+archive_filter_bytes	nimarchive/archive.html#archive_filter_bytes,ptr.archive,cint	archive: archive_filter_bytes(a1: ptr archive; a2: cint): la_int64_t	
+archive_filter_code	nimarchive/archive.html#archive_filter_code,ptr.archive,cint	archive: archive_filter_code(a1: ptr archive; a2: cint): cint	
+archive_filter_name	nimarchive/archive.html#archive_filter_name,ptr.archive,cint	archive: archive_filter_name(a1: ptr archive; a2: cint): cstring	
+archive_position_compressed	nimarchive/archive.html#archive_position_compressed,ptr.archive	archive: archive_position_compressed(a1: ptr archive): la_int64_t	
+archive_position_uncompressed	nimarchive/archive.html#archive_position_uncompressed,ptr.archive	archive: archive_position_uncompressed(a1: ptr archive): la_int64_t	
+archive_compression_name	nimarchive/archive.html#archive_compression_name,ptr.archive	archive: archive_compression_name(a1: ptr archive): cstring	
+archive_compression	nimarchive/archive.html#archive_compression,ptr.archive	archive: archive_compression(a1: ptr archive): cint	
+archive_errno	nimarchive/archive.html#archive_errno,ptr.archive	archive: archive_errno(a1: ptr archive): cint	
+archive_error_string	nimarchive/archive.html#archive_error_string,ptr.archive	archive: archive_error_string(a1: ptr archive): cstring	
+archive_format_name	nimarchive/archive.html#archive_format_name,ptr.archive	archive: archive_format_name(a1: ptr archive): cstring	
+archive_format	nimarchive/archive.html#archive_format,ptr.archive	archive: archive_format(a1: ptr archive): cint	
+archive_clear_error	nimarchive/archive.html#archive_clear_error,ptr.archive	archive: archive_clear_error(a1: ptr archive)	
+archive_set_error	nimarchive/archive.html#archive_set_error,ptr.archive,cint,cstring	archive: archive_set_error(a1: ptr archive; err: cint; fmt: cstring)	
+archive_copy_error	nimarchive/archive.html#archive_copy_error,ptr.archive,ptr.archive	archive: archive_copy_error(dest: ptr archive; src: ptr archive)	
+archive_file_count	nimarchive/archive.html#archive_file_count,ptr.archive	archive: archive_file_count(a1: ptr archive): cint	
+archive_match_new	nimarchive/archive.html#archive_match_new	archive: archive_match_new(): ptr archive	
+archive_match_free	nimarchive/archive.html#archive_match_free,ptr.archive	archive: archive_match_free(a1: ptr archive): cint	
+archive_match_excluded	nimarchive/archive.html#archive_match_excluded,ptr.archive,ptr.archive_entry	archive: archive_match_excluded(a1: ptr archive; a2: ptr archive_entry): cint	
+archive_match_path_excluded	nimarchive/archive.html#archive_match_path_excluded,ptr.archive,ptr.archive_entry	archive: archive_match_path_excluded(a1: ptr archive; a2: ptr archive_entry): cint	
+archive_match_set_inclusion_recursion	nimarchive/archive.html#archive_match_set_inclusion_recursion,ptr.archive,cint	archive: archive_match_set_inclusion_recursion(a1: ptr archive; a2: cint): cint	
+archive_match_exclude_pattern	nimarchive/archive.html#archive_match_exclude_pattern,ptr.archive,cstring	archive: archive_match_exclude_pattern(a1: ptr archive; a2: cstring): cint	
+archive_match_exclude_pattern_w	nimarchive/archive.html#archive_match_exclude_pattern_w,ptr.archive,ptr.wchar_t	archive: archive_match_exclude_pattern_w(a1: ptr archive; a2: ptr wchar_t): cint	
+archive_match_exclude_pattern_from_file	nimarchive/archive.html#archive_match_exclude_pattern_from_file,ptr.archive,cstring,cint	archive: archive_match_exclude_pattern_from_file(a1: ptr archive; a2: cstring;\n                                        nullSeparator: cint): cint	
+archive_match_exclude_pattern_from_file_w	nimarchive/archive.html#archive_match_exclude_pattern_from_file_w,ptr.archive,ptr.wchar_t,cint	archive: archive_match_exclude_pattern_from_file_w(a1: ptr archive; a2: ptr wchar_t;\n    nullSeparator: cint): cint	
+archive_match_include_pattern	nimarchive/archive.html#archive_match_include_pattern,ptr.archive,cstring	archive: archive_match_include_pattern(a1: ptr archive; a2: cstring): cint	
+archive_match_include_pattern_w	nimarchive/archive.html#archive_match_include_pattern_w,ptr.archive,ptr.wchar_t	archive: archive_match_include_pattern_w(a1: ptr archive; a2: ptr wchar_t): cint	
+archive_match_include_pattern_from_file	nimarchive/archive.html#archive_match_include_pattern_from_file,ptr.archive,cstring,cint	archive: archive_match_include_pattern_from_file(a1: ptr archive; a2: cstring;\n                                        nullSeparator: cint): cint	
+archive_match_include_pattern_from_file_w	nimarchive/archive.html#archive_match_include_pattern_from_file_w,ptr.archive,ptr.wchar_t,cint	archive: archive_match_include_pattern_from_file_w(a1: ptr archive; a2: ptr wchar_t;\n    nullSeparator: cint): cint	
+archive_match_path_unmatched_inclusions	nimarchive/archive.html#archive_match_path_unmatched_inclusions,ptr.archive	archive: archive_match_path_unmatched_inclusions(a1: ptr archive): cint	
+archive_match_path_unmatched_inclusions_next	nimarchive/archive.html#archive_match_path_unmatched_inclusions_next,ptr.archive,ptr.cstring	archive: archive_match_path_unmatched_inclusions_next(a1: ptr archive; a2: ptr cstring): cint	
+archive_match_path_unmatched_inclusions_next_w	nimarchive/archive.html#archive_match_path_unmatched_inclusions_next_w,ptr.archive,ptr.ptr.wchar_t	archive: archive_match_path_unmatched_inclusions_next_w(a1: ptr archive; a2: ptr ptr wchar_t): cint	
+archive_match_time_excluded	nimarchive/archive.html#archive_match_time_excluded,ptr.archive,ptr.archive_entry	archive: archive_match_time_excluded(a1: ptr archive; a2: ptr archive_entry): cint	
+archive_match_include_time	nimarchive/archive.html#archive_match_include_time,ptr.archive,cint,impl,clong	archive: archive_match_include_time(a1: ptr archive; flag: cint; sec: time_t; nsec: clong): cint	
+archive_match_include_date	nimarchive/archive.html#archive_match_include_date,ptr.archive,cint,cstring	archive: archive_match_include_date(a1: ptr archive; flag: cint; datestr: cstring): cint	
+archive_match_include_date_w	nimarchive/archive.html#archive_match_include_date_w,ptr.archive,cint,ptr.wchar_t	archive: archive_match_include_date_w(a1: ptr archive; flag: cint; datestr: ptr wchar_t): cint	
+archive_match_include_file_time	nimarchive/archive.html#archive_match_include_file_time,ptr.archive,cint,cstring	archive: archive_match_include_file_time(a1: ptr archive; flag: cint; pathname: cstring): cint	
+archive_match_include_file_time_w	nimarchive/archive.html#archive_match_include_file_time_w,ptr.archive,cint,ptr.wchar_t	archive: archive_match_include_file_time_w(a1: ptr archive; flag: cint; pathname: ptr wchar_t): cint	
+archive_match_exclude_entry	nimarchive/archive.html#archive_match_exclude_entry,ptr.archive,cint,ptr.archive_entry	archive: archive_match_exclude_entry(a1: ptr archive; flag: cint; a2: ptr archive_entry): cint	
+archive_match_owner_excluded	nimarchive/archive.html#archive_match_owner_excluded,ptr.archive,ptr.archive_entry	archive: archive_match_owner_excluded(a1: ptr archive; a2: ptr archive_entry): cint	
+archive_match_include_uid	nimarchive/archive.html#archive_match_include_uid,ptr.archive,la_int64_t	archive: archive_match_include_uid(a1: ptr archive; a2: la_int64_t): cint	
+archive_match_include_gid	nimarchive/archive.html#archive_match_include_gid,ptr.archive,la_int64_t	archive: archive_match_include_gid(a1: ptr archive; a2: la_int64_t): cint	
+archive_match_include_uname	nimarchive/archive.html#archive_match_include_uname,ptr.archive,cstring	archive: archive_match_include_uname(a1: ptr archive; a2: cstring): cint	
+archive_match_include_uname_w	nimarchive/archive.html#archive_match_include_uname_w,ptr.archive,ptr.wchar_t	archive: archive_match_include_uname_w(a1: ptr archive; a2: ptr wchar_t): cint	
+archive_match_include_gname	nimarchive/archive.html#archive_match_include_gname,ptr.archive,cstring	archive: archive_match_include_gname(a1: ptr archive; a2: cstring): cint	
+archive_match_include_gname_w	nimarchive/archive.html#archive_match_include_gname_w,ptr.archive,ptr.wchar_t	archive: archive_match_include_gname_w(a1: ptr archive; a2: ptr wchar_t): cint	
+archive_utility_string_sort	nimarchive/archive.html#archive_utility_string_sort,ptr.cstring	archive: archive_utility_string_sort(a1: ptr cstring): cint	
+archive_entry_clear	nimarchive/archive.html#archive_entry_clear,ptr.archive_entry	archive: archive_entry_clear(a1: ptr archive_entry): ptr archive_entry	
+archive_entry_clone	nimarchive/archive.html#archive_entry_clone,ptr.archive_entry	archive: archive_entry_clone(a1: ptr archive_entry): ptr archive_entry	
+archive_entry_free	nimarchive/archive.html#archive_entry_free,ptr.archive_entry	archive: archive_entry_free(a1: ptr archive_entry)	
+archive_entry_new	nimarchive/archive.html#archive_entry_new	archive: archive_entry_new(): ptr archive_entry	
+archive_entry_new2	nimarchive/archive.html#archive_entry_new2,ptr.archive	archive: archive_entry_new2(a1: ptr archive): ptr archive_entry	
+archive_entry_atime	nimarchive/archive.html#archive_entry_atime,ptr.archive_entry	archive: archive_entry_atime(a1: ptr archive_entry): time_t	
+archive_entry_atime_nsec	nimarchive/archive.html#archive_entry_atime_nsec,ptr.archive_entry	archive: archive_entry_atime_nsec(a1: ptr archive_entry): clong	
+archive_entry_atime_is_set	nimarchive/archive.html#archive_entry_atime_is_set,ptr.archive_entry	archive: archive_entry_atime_is_set(a1: ptr archive_entry): cint	
+archive_entry_birthtime	nimarchive/archive.html#archive_entry_birthtime,ptr.archive_entry	archive: archive_entry_birthtime(a1: ptr archive_entry): time_t	
+archive_entry_birthtime_nsec	nimarchive/archive.html#archive_entry_birthtime_nsec,ptr.archive_entry	archive: archive_entry_birthtime_nsec(a1: ptr archive_entry): clong	
+archive_entry_birthtime_is_set	nimarchive/archive.html#archive_entry_birthtime_is_set,ptr.archive_entry	archive: archive_entry_birthtime_is_set(a1: ptr archive_entry): cint	
+archive_entry_ctime	nimarchive/archive.html#archive_entry_ctime,ptr.archive_entry	archive: archive_entry_ctime(a1: ptr archive_entry): time_t	
+archive_entry_ctime_nsec	nimarchive/archive.html#archive_entry_ctime_nsec,ptr.archive_entry	archive: archive_entry_ctime_nsec(a1: ptr archive_entry): clong	
+archive_entry_ctime_is_set	nimarchive/archive.html#archive_entry_ctime_is_set,ptr.archive_entry	archive: archive_entry_ctime_is_set(a1: ptr archive_entry): cint	
+archive_entry_dev	nimarchive/archive.html#archive_entry_dev,ptr.archive_entry	archive: archive_entry_dev(a1: ptr archive_entry): dev_t	
+archive_entry_dev_is_set	nimarchive/archive.html#archive_entry_dev_is_set,ptr.archive_entry	archive: archive_entry_dev_is_set(a1: ptr archive_entry): cint	
+archive_entry_devmajor	nimarchive/archive.html#archive_entry_devmajor,ptr.archive_entry	archive: archive_entry_devmajor(a1: ptr archive_entry): dev_t	
+archive_entry_devminor	nimarchive/archive.html#archive_entry_devminor,ptr.archive_entry	archive: archive_entry_devminor(a1: ptr archive_entry): dev_t	
+archive_entry_filetype	nimarchive/archive.html#archive_entry_filetype,ptr.archive_entry	archive: archive_entry_filetype(a1: ptr archive_entry): mode_t	
+archive_entry_fflags	nimarchive/archive.html#archive_entry_fflags,ptr.archive_entry,ptr.culong,ptr.culong	archive: archive_entry_fflags(a1: ptr archive_entry; a2: ptr culong; a3: ptr culong)	
+archive_entry_fflags_text	nimarchive/archive.html#archive_entry_fflags_text,ptr.archive_entry	archive: archive_entry_fflags_text(a1: ptr archive_entry): cstring	
+archive_entry_gid	nimarchive/archive.html#archive_entry_gid,ptr.archive_entry	archive: archive_entry_gid(a1: ptr archive_entry): la_int64_t	
+archive_entry_gname	nimarchive/archive.html#archive_entry_gname,ptr.archive_entry	archive: archive_entry_gname(a1: ptr archive_entry): cstring	
+archive_entry_gname_utf8	nimarchive/archive.html#archive_entry_gname_utf8,ptr.archive_entry	archive: archive_entry_gname_utf8(a1: ptr archive_entry): cstring	
+archive_entry_gname_w	nimarchive/archive.html#archive_entry_gname_w,ptr.archive_entry	archive: archive_entry_gname_w(a1: ptr archive_entry): ptr wchar_t	
+archive_entry_hardlink	nimarchive/archive.html#archive_entry_hardlink,ptr.archive_entry	archive: archive_entry_hardlink(a1: ptr archive_entry): cstring	
+archive_entry_hardlink_utf8	nimarchive/archive.html#archive_entry_hardlink_utf8,ptr.archive_entry	archive: archive_entry_hardlink_utf8(a1: ptr archive_entry): cstring	
+archive_entry_hardlink_w	nimarchive/archive.html#archive_entry_hardlink_w,ptr.archive_entry	archive: archive_entry_hardlink_w(a1: ptr archive_entry): ptr wchar_t	
+archive_entry_ino	nimarchive/archive.html#archive_entry_ino,ptr.archive_entry	archive: archive_entry_ino(a1: ptr archive_entry): la_int64_t	
+archive_entry_ino64	nimarchive/archive.html#archive_entry_ino64,ptr.archive_entry	archive: archive_entry_ino64(a1: ptr archive_entry): la_int64_t	
+archive_entry_ino_is_set	nimarchive/archive.html#archive_entry_ino_is_set,ptr.archive_entry	archive: archive_entry_ino_is_set(a1: ptr archive_entry): cint	
+archive_entry_mode	nimarchive/archive.html#archive_entry_mode,ptr.archive_entry	archive: archive_entry_mode(a1: ptr archive_entry): mode_t	
+archive_entry_mtime	nimarchive/archive.html#archive_entry_mtime,ptr.archive_entry	archive: archive_entry_mtime(a1: ptr archive_entry): time_t	
+archive_entry_mtime_nsec	nimarchive/archive.html#archive_entry_mtime_nsec,ptr.archive_entry	archive: archive_entry_mtime_nsec(a1: ptr archive_entry): clong	
+archive_entry_mtime_is_set	nimarchive/archive.html#archive_entry_mtime_is_set,ptr.archive_entry	archive: archive_entry_mtime_is_set(a1: ptr archive_entry): cint	
+archive_entry_nlink	nimarchive/archive.html#archive_entry_nlink,ptr.archive_entry	archive: archive_entry_nlink(a1: ptr archive_entry): cuint	
+archive_entry_pathname	nimarchive/archive.html#archive_entry_pathname,ptr.archive_entry	archive: archive_entry_pathname(a1: ptr archive_entry): cstring	
+archive_entry_pathname_utf8	nimarchive/archive.html#archive_entry_pathname_utf8,ptr.archive_entry	archive: archive_entry_pathname_utf8(a1: ptr archive_entry): cstring	
+archive_entry_pathname_w	nimarchive/archive.html#archive_entry_pathname_w,ptr.archive_entry	archive: archive_entry_pathname_w(a1: ptr archive_entry): ptr wchar_t	
+archive_entry_perm	nimarchive/archive.html#archive_entry_perm,ptr.archive_entry	archive: archive_entry_perm(a1: ptr archive_entry): mode_t	
+archive_entry_rdev	nimarchive/archive.html#archive_entry_rdev,ptr.archive_entry	archive: archive_entry_rdev(a1: ptr archive_entry): dev_t	
+archive_entry_rdevmajor	nimarchive/archive.html#archive_entry_rdevmajor,ptr.archive_entry	archive: archive_entry_rdevmajor(a1: ptr archive_entry): dev_t	
+archive_entry_rdevminor	nimarchive/archive.html#archive_entry_rdevminor,ptr.archive_entry	archive: archive_entry_rdevminor(a1: ptr archive_entry): dev_t	
+archive_entry_sourcepath	nimarchive/archive.html#archive_entry_sourcepath,ptr.archive_entry	archive: archive_entry_sourcepath(a1: ptr archive_entry): cstring	
+archive_entry_sourcepath_w	nimarchive/archive.html#archive_entry_sourcepath_w,ptr.archive_entry	archive: archive_entry_sourcepath_w(a1: ptr archive_entry): ptr wchar_t	
+archive_entry_size	nimarchive/archive.html#archive_entry_size,ptr.archive_entry	archive: archive_entry_size(a1: ptr archive_entry): la_int64_t	
+archive_entry_size_is_set	nimarchive/archive.html#archive_entry_size_is_set,ptr.archive_entry	archive: archive_entry_size_is_set(a1: ptr archive_entry): cint	
+archive_entry_strmode	nimarchive/archive.html#archive_entry_strmode,ptr.archive_entry	archive: archive_entry_strmode(a1: ptr archive_entry): cstring	
+archive_entry_symlink	nimarchive/archive.html#archive_entry_symlink,ptr.archive_entry	archive: archive_entry_symlink(a1: ptr archive_entry): cstring	
+archive_entry_symlink_utf8	nimarchive/archive.html#archive_entry_symlink_utf8,ptr.archive_entry	archive: archive_entry_symlink_utf8(a1: ptr archive_entry): cstring	
+archive_entry_symlink_type	nimarchive/archive.html#archive_entry_symlink_type,ptr.archive_entry	archive: archive_entry_symlink_type(a1: ptr archive_entry): cint	
+archive_entry_symlink_w	nimarchive/archive.html#archive_entry_symlink_w,ptr.archive_entry	archive: archive_entry_symlink_w(a1: ptr archive_entry): ptr wchar_t	
+archive_entry_uid	nimarchive/archive.html#archive_entry_uid,ptr.archive_entry	archive: archive_entry_uid(a1: ptr archive_entry): la_int64_t	
+archive_entry_uname	nimarchive/archive.html#archive_entry_uname,ptr.archive_entry	archive: archive_entry_uname(a1: ptr archive_entry): cstring	
+archive_entry_uname_utf8	nimarchive/archive.html#archive_entry_uname_utf8,ptr.archive_entry	archive: archive_entry_uname_utf8(a1: ptr archive_entry): cstring	
+archive_entry_uname_w	nimarchive/archive.html#archive_entry_uname_w,ptr.archive_entry	archive: archive_entry_uname_w(a1: ptr archive_entry): ptr wchar_t	
+archive_entry_is_data_encrypted	nimarchive/archive.html#archive_entry_is_data_encrypted,ptr.archive_entry	archive: archive_entry_is_data_encrypted(a1: ptr archive_entry): cint	
+archive_entry_is_metadata_encrypted	nimarchive/archive.html#archive_entry_is_metadata_encrypted,ptr.archive_entry	archive: archive_entry_is_metadata_encrypted(a1: ptr archive_entry): cint	
+archive_entry_is_encrypted	nimarchive/archive.html#archive_entry_is_encrypted,ptr.archive_entry	archive: archive_entry_is_encrypted(a1: ptr archive_entry): cint	
+archive_entry_set_atime	nimarchive/archive.html#archive_entry_set_atime,ptr.archive_entry,impl,clong	archive: archive_entry_set_atime(a1: ptr archive_entry; a2: time_t; a3: clong)	
+archive_entry_unset_atime	nimarchive/archive.html#archive_entry_unset_atime,ptr.archive_entry	archive: archive_entry_unset_atime(a1: ptr archive_entry)	
+archive_entry_set_birthtime	nimarchive/archive.html#archive_entry_set_birthtime,ptr.archive_entry,impl,clong	archive: archive_entry_set_birthtime(a1: ptr archive_entry; a2: time_t; a3: clong)	
+archive_entry_unset_birthtime	nimarchive/archive.html#archive_entry_unset_birthtime,ptr.archive_entry	archive: archive_entry_unset_birthtime(a1: ptr archive_entry)	
+archive_entry_set_ctime	nimarchive/archive.html#archive_entry_set_ctime,ptr.archive_entry,impl,clong	archive: archive_entry_set_ctime(a1: ptr archive_entry; a2: time_t; a3: clong)	
+archive_entry_unset_ctime	nimarchive/archive.html#archive_entry_unset_ctime,ptr.archive_entry	archive: archive_entry_unset_ctime(a1: ptr archive_entry)	
+archive_entry_set_dev	nimarchive/archive.html#archive_entry_set_dev,ptr.archive_entry,dev_t	archive: archive_entry_set_dev(a1: ptr archive_entry; a2: dev_t)	
+archive_entry_set_devmajor	nimarchive/archive.html#archive_entry_set_devmajor,ptr.archive_entry,dev_t	archive: archive_entry_set_devmajor(a1: ptr archive_entry; a2: dev_t)	
+archive_entry_set_devminor	nimarchive/archive.html#archive_entry_set_devminor,ptr.archive_entry,dev_t	archive: archive_entry_set_devminor(a1: ptr archive_entry; a2: dev_t)	
+archive_entry_set_filetype	nimarchive/archive.html#archive_entry_set_filetype,ptr.archive_entry,cuint	archive: archive_entry_set_filetype(a1: ptr archive_entry; a2: cuint)	
+archive_entry_set_fflags	nimarchive/archive.html#archive_entry_set_fflags,ptr.archive_entry,culong,culong	archive: archive_entry_set_fflags(a1: ptr archive_entry; a2: culong; a3: culong)	
+archive_entry_copy_fflags_text	nimarchive/archive.html#archive_entry_copy_fflags_text,ptr.archive_entry,cstring	archive: archive_entry_copy_fflags_text(a1: ptr archive_entry; a2: cstring): cstring	
+archive_entry_copy_fflags_text_w	nimarchive/archive.html#archive_entry_copy_fflags_text_w,ptr.archive_entry,ptr.wchar_t	archive: archive_entry_copy_fflags_text_w(a1: ptr archive_entry; a2: ptr wchar_t): ptr wchar_t	
+archive_entry_set_gid	nimarchive/archive.html#archive_entry_set_gid,ptr.archive_entry,la_int64_t	archive: archive_entry_set_gid(a1: ptr archive_entry; a2: la_int64_t)	
+archive_entry_set_gname	nimarchive/archive.html#archive_entry_set_gname,ptr.archive_entry,cstring	archive: archive_entry_set_gname(a1: ptr archive_entry; a2: cstring)	
+archive_entry_set_gname_utf8	nimarchive/archive.html#archive_entry_set_gname_utf8,ptr.archive_entry,cstring	archive: archive_entry_set_gname_utf8(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_gname	nimarchive/archive.html#archive_entry_copy_gname,ptr.archive_entry,cstring	archive: archive_entry_copy_gname(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_gname_w	nimarchive/archive.html#archive_entry_copy_gname_w,ptr.archive_entry,ptr.wchar_t	archive: archive_entry_copy_gname_w(a1: ptr archive_entry; a2: ptr wchar_t)	
+archive_entry_update_gname_utf8	nimarchive/archive.html#archive_entry_update_gname_utf8,ptr.archive_entry,cstring	archive: archive_entry_update_gname_utf8(a1: ptr archive_entry; a2: cstring): cint	
+archive_entry_set_hardlink	nimarchive/archive.html#archive_entry_set_hardlink,ptr.archive_entry,cstring	archive: archive_entry_set_hardlink(a1: ptr archive_entry; a2: cstring)	
+archive_entry_set_hardlink_utf8	nimarchive/archive.html#archive_entry_set_hardlink_utf8,ptr.archive_entry,cstring	archive: archive_entry_set_hardlink_utf8(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_hardlink	nimarchive/archive.html#archive_entry_copy_hardlink,ptr.archive_entry,cstring	archive: archive_entry_copy_hardlink(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_hardlink_w	nimarchive/archive.html#archive_entry_copy_hardlink_w,ptr.archive_entry,ptr.wchar_t	archive: archive_entry_copy_hardlink_w(a1: ptr archive_entry; a2: ptr wchar_t)	
+archive_entry_update_hardlink_utf8	nimarchive/archive.html#archive_entry_update_hardlink_utf8,ptr.archive_entry,cstring	archive: archive_entry_update_hardlink_utf8(a1: ptr archive_entry; a2: cstring): cint	
+archive_entry_set_ino	nimarchive/archive.html#archive_entry_set_ino,ptr.archive_entry,la_int64_t	archive: archive_entry_set_ino(a1: ptr archive_entry; a2: la_int64_t)	
+archive_entry_set_ino64	nimarchive/archive.html#archive_entry_set_ino64,ptr.archive_entry,la_int64_t	archive: archive_entry_set_ino64(a1: ptr archive_entry; a2: la_int64_t)	
+archive_entry_set_link	nimarchive/archive.html#archive_entry_set_link,ptr.archive_entry,cstring	archive: archive_entry_set_link(a1: ptr archive_entry; a2: cstring)	
+archive_entry_set_link_utf8	nimarchive/archive.html#archive_entry_set_link_utf8,ptr.archive_entry,cstring	archive: archive_entry_set_link_utf8(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_link	nimarchive/archive.html#archive_entry_copy_link,ptr.archive_entry,cstring	archive: archive_entry_copy_link(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_link_w	nimarchive/archive.html#archive_entry_copy_link_w,ptr.archive_entry,ptr.wchar_t	archive: archive_entry_copy_link_w(a1: ptr archive_entry; a2: ptr wchar_t)	
+archive_entry_update_link_utf8	nimarchive/archive.html#archive_entry_update_link_utf8,ptr.archive_entry,cstring	archive: archive_entry_update_link_utf8(a1: ptr archive_entry; a2: cstring): cint	
+archive_entry_set_mode	nimarchive/archive.html#archive_entry_set_mode,ptr.archive_entry,mode_t	archive: archive_entry_set_mode(a1: ptr archive_entry; a2: mode_t)	
+archive_entry_set_mtime	nimarchive/archive.html#archive_entry_set_mtime,ptr.archive_entry,impl,clong	archive: archive_entry_set_mtime(a1: ptr archive_entry; a2: time_t; a3: clong)	
+archive_entry_unset_mtime	nimarchive/archive.html#archive_entry_unset_mtime,ptr.archive_entry	archive: archive_entry_unset_mtime(a1: ptr archive_entry)	
+archive_entry_set_nlink	nimarchive/archive.html#archive_entry_set_nlink,ptr.archive_entry,cuint	archive: archive_entry_set_nlink(a1: ptr archive_entry; a2: cuint)	
+archive_entry_set_pathname	nimarchive/archive.html#archive_entry_set_pathname,ptr.archive_entry,cstring	archive: archive_entry_set_pathname(a1: ptr archive_entry; a2: cstring)	
+archive_entry_set_pathname_utf8	nimarchive/archive.html#archive_entry_set_pathname_utf8,ptr.archive_entry,cstring	archive: archive_entry_set_pathname_utf8(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_pathname	nimarchive/archive.html#archive_entry_copy_pathname,ptr.archive_entry,cstring	archive: archive_entry_copy_pathname(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_pathname_w	nimarchive/archive.html#archive_entry_copy_pathname_w,ptr.archive_entry,ptr.wchar_t	archive: archive_entry_copy_pathname_w(a1: ptr archive_entry; a2: ptr wchar_t)	
+archive_entry_update_pathname_utf8	nimarchive/archive.html#archive_entry_update_pathname_utf8,ptr.archive_entry,cstring	archive: archive_entry_update_pathname_utf8(a1: ptr archive_entry; a2: cstring): cint	
+archive_entry_set_perm	nimarchive/archive.html#archive_entry_set_perm,ptr.archive_entry,mode_t	archive: archive_entry_set_perm(a1: ptr archive_entry; a2: mode_t)	
+archive_entry_set_rdev	nimarchive/archive.html#archive_entry_set_rdev,ptr.archive_entry,dev_t	archive: archive_entry_set_rdev(a1: ptr archive_entry; a2: dev_t)	
+archive_entry_set_rdevmajor	nimarchive/archive.html#archive_entry_set_rdevmajor,ptr.archive_entry,dev_t	archive: archive_entry_set_rdevmajor(a1: ptr archive_entry; a2: dev_t)	
+archive_entry_set_rdevminor	nimarchive/archive.html#archive_entry_set_rdevminor,ptr.archive_entry,dev_t	archive: archive_entry_set_rdevminor(a1: ptr archive_entry; a2: dev_t)	
+archive_entry_set_size	nimarchive/archive.html#archive_entry_set_size,ptr.archive_entry,la_int64_t	archive: archive_entry_set_size(a1: ptr archive_entry; a2: la_int64_t)	
+archive_entry_unset_size	nimarchive/archive.html#archive_entry_unset_size,ptr.archive_entry	archive: archive_entry_unset_size(a1: ptr archive_entry)	
+archive_entry_copy_sourcepath	nimarchive/archive.html#archive_entry_copy_sourcepath,ptr.archive_entry,cstring	archive: archive_entry_copy_sourcepath(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_sourcepath_w	nimarchive/archive.html#archive_entry_copy_sourcepath_w,ptr.archive_entry,ptr.wchar_t	archive: archive_entry_copy_sourcepath_w(a1: ptr archive_entry; a2: ptr wchar_t)	
+archive_entry_set_symlink	nimarchive/archive.html#archive_entry_set_symlink,ptr.archive_entry,cstring	archive: archive_entry_set_symlink(a1: ptr archive_entry; a2: cstring)	
+archive_entry_set_symlink_type	nimarchive/archive.html#archive_entry_set_symlink_type,ptr.archive_entry,cint	archive: archive_entry_set_symlink_type(a1: ptr archive_entry; a2: cint)	
+archive_entry_set_symlink_utf8	nimarchive/archive.html#archive_entry_set_symlink_utf8,ptr.archive_entry,cstring	archive: archive_entry_set_symlink_utf8(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_symlink	nimarchive/archive.html#archive_entry_copy_symlink,ptr.archive_entry,cstring	archive: archive_entry_copy_symlink(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_symlink_w	nimarchive/archive.html#archive_entry_copy_symlink_w,ptr.archive_entry,ptr.wchar_t	archive: archive_entry_copy_symlink_w(a1: ptr archive_entry; a2: ptr wchar_t)	
+archive_entry_update_symlink_utf8	nimarchive/archive.html#archive_entry_update_symlink_utf8,ptr.archive_entry,cstring	archive: archive_entry_update_symlink_utf8(a1: ptr archive_entry; a2: cstring): cint	
+archive_entry_set_uid	nimarchive/archive.html#archive_entry_set_uid,ptr.archive_entry,la_int64_t	archive: archive_entry_set_uid(a1: ptr archive_entry; a2: la_int64_t)	
+archive_entry_set_uname	nimarchive/archive.html#archive_entry_set_uname,ptr.archive_entry,cstring	archive: archive_entry_set_uname(a1: ptr archive_entry; a2: cstring)	
+archive_entry_set_uname_utf8	nimarchive/archive.html#archive_entry_set_uname_utf8,ptr.archive_entry,cstring	archive: archive_entry_set_uname_utf8(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_uname	nimarchive/archive.html#archive_entry_copy_uname,ptr.archive_entry,cstring	archive: archive_entry_copy_uname(a1: ptr archive_entry; a2: cstring)	
+archive_entry_copy_uname_w	nimarchive/archive.html#archive_entry_copy_uname_w,ptr.archive_entry,ptr.wchar_t	archive: archive_entry_copy_uname_w(a1: ptr archive_entry; a2: ptr wchar_t)	
+archive_entry_update_uname_utf8	nimarchive/archive.html#archive_entry_update_uname_utf8,ptr.archive_entry,cstring	archive: archive_entry_update_uname_utf8(a1: ptr archive_entry; a2: cstring): cint	
+archive_entry_set_is_data_encrypted	nimarchive/archive.html#archive_entry_set_is_data_encrypted,ptr.archive_entry,cchar	archive: archive_entry_set_is_data_encrypted(a1: ptr archive_entry; is_encrypted: cchar)	
+archive_entry_set_is_metadata_encrypted	nimarchive/archive.html#archive_entry_set_is_metadata_encrypted,ptr.archive_entry,cchar	archive: archive_entry_set_is_metadata_encrypted(a1: ptr archive_entry; is_encrypted: cchar)	
+archive_entry_stat	nimarchive/archive.html#archive_entry_stat,ptr.archive_entry	archive: archive_entry_stat(a1: ptr archive_entry): ptr stat	
+archive_entry_copy_stat	nimarchive/archive.html#archive_entry_copy_stat,ptr.archive_entry,ptr.stat	archive: archive_entry_copy_stat(a1: ptr archive_entry; a2: ptr stat)	
+archive_entry_mac_metadata	nimarchive/archive.html#archive_entry_mac_metadata,ptr.archive_entry,ptr.cuint	archive: archive_entry_mac_metadata(a1: ptr archive_entry; a2: ptr cuint): pointer	
+archive_entry_copy_mac_metadata	nimarchive/archive.html#archive_entry_copy_mac_metadata,ptr.archive_entry,pointer,cuint	archive: archive_entry_copy_mac_metadata(a1: ptr archive_entry; a2: pointer; a3: cuint)	
+archive_entry_acl_clear	nimarchive/archive.html#archive_entry_acl_clear,ptr.archive_entry	archive: archive_entry_acl_clear(a1: ptr archive_entry)	
+archive_entry_acl_add_entry	nimarchive/archive.html#archive_entry_acl_add_entry,ptr.archive_entry,cint,cint,cint,cint,cstring	archive: archive_entry_acl_add_entry(a1: ptr archive_entry; a2: cint; a3: cint; a4: cint;\n                            a5: cint; a6: cstring): cint	
+archive_entry_acl_add_entry_w	nimarchive/archive.html#archive_entry_acl_add_entry_w,ptr.archive_entry,cint,cint,cint,cint,ptr.wchar_t	archive: archive_entry_acl_add_entry_w(a1: ptr archive_entry; a2: cint; a3: cint; a4: cint;\n                              a5: cint; a6: ptr wchar_t): cint	
+archive_entry_acl_reset	nimarchive/archive.html#archive_entry_acl_reset,ptr.archive_entry,cint	archive: archive_entry_acl_reset(a1: ptr archive_entry; a2: cint): cint	
+archive_entry_acl_next	nimarchive/archive.html#archive_entry_acl_next,ptr.archive_entry,cint,ptr.cint,ptr.cint,ptr.cint,ptr.cint,ptr.cstring	archive: archive_entry_acl_next(a1: ptr archive_entry; a2: cint; a3: ptr cint; a4: ptr cint;\n                       a5: ptr cint; a6: ptr cint; a7: ptr cstring): cint	
+archive_entry_acl_next_w	nimarchive/archive.html#archive_entry_acl_next_w,ptr.archive_entry,cint,ptr.cint,ptr.cint,ptr.cint,ptr.cint,ptr.ptr.wchar_t	archive: archive_entry_acl_next_w(a1: ptr archive_entry; a2: cint; a3: ptr cint; a4: ptr cint;\n                         a5: ptr cint; a6: ptr cint; a7: ptr ptr wchar_t): cint	
+archive_entry_acl_to_text_w	nimarchive/archive.html#archive_entry_acl_to_text_w,ptr.archive_entry,ptr.la_ssize_t,cint	archive: archive_entry_acl_to_text_w(a1: ptr archive_entry; a2: ptr la_ssize_t; a3: cint): ptr wchar_t	
+archive_entry_acl_to_text	nimarchive/archive.html#archive_entry_acl_to_text,ptr.archive_entry,ptr.la_ssize_t,cint	archive: archive_entry_acl_to_text(a1: ptr archive_entry; a2: ptr la_ssize_t; a3: cint): cstring	
+archive_entry_acl_from_text_w	nimarchive/archive.html#archive_entry_acl_from_text_w,ptr.archive_entry,ptr.wchar_t,cint	archive: archive_entry_acl_from_text_w(a1: ptr archive_entry; a2: ptr wchar_t; a3: cint): cint	
+archive_entry_acl_from_text	nimarchive/archive.html#archive_entry_acl_from_text,ptr.archive_entry,cstring,cint	archive: archive_entry_acl_from_text(a1: ptr archive_entry; a2: cstring; a3: cint): cint	
+archive_entry_acl_text_w	nimarchive/archive.html#archive_entry_acl_text_w,ptr.archive_entry,cint	archive: archive_entry_acl_text_w(a1: ptr archive_entry; a2: cint): ptr wchar_t	
+archive_entry_acl_text	nimarchive/archive.html#archive_entry_acl_text,ptr.archive_entry,cint	archive: archive_entry_acl_text(a1: ptr archive_entry; a2: cint): cstring	
+archive_entry_acl_types	nimarchive/archive.html#archive_entry_acl_types,ptr.archive_entry	archive: archive_entry_acl_types(a1: ptr archive_entry): cint	
+archive_entry_acl_count	nimarchive/archive.html#archive_entry_acl_count,ptr.archive_entry,cint	archive: archive_entry_acl_count(a1: ptr archive_entry; a2: cint): cint	
+archive_entry_acl	nimarchive/archive.html#archive_entry_acl,ptr.archive_entry	archive: archive_entry_acl(a1: ptr archive_entry): ptr archive_acl	
+archive_entry_xattr_clear	nimarchive/archive.html#archive_entry_xattr_clear,ptr.archive_entry	archive: archive_entry_xattr_clear(a1: ptr archive_entry)	
+archive_entry_xattr_add_entry	nimarchive/archive.html#archive_entry_xattr_add_entry,ptr.archive_entry,cstring,pointer,cuint	archive: archive_entry_xattr_add_entry(a1: ptr archive_entry; a2: cstring; a3: pointer;\n                              a4: cuint)	
+archive_entry_xattr_count	nimarchive/archive.html#archive_entry_xattr_count,ptr.archive_entry	archive: archive_entry_xattr_count(a1: ptr archive_entry): cint	
+archive_entry_xattr_reset	nimarchive/archive.html#archive_entry_xattr_reset,ptr.archive_entry	archive: archive_entry_xattr_reset(a1: ptr archive_entry): cint	
+archive_entry_xattr_next	nimarchive/archive.html#archive_entry_xattr_next,ptr.archive_entry,ptr.cstring,ptr.pointer,ptr.cuint	archive: archive_entry_xattr_next(a1: ptr archive_entry; a2: ptr cstring; a3: ptr pointer;\n                         a4: ptr cuint): cint	
+archive_entry_sparse_clear	nimarchive/archive.html#archive_entry_sparse_clear,ptr.archive_entry	archive: archive_entry_sparse_clear(a1: ptr archive_entry)	
+archive_entry_sparse_add_entry	nimarchive/archive.html#archive_entry_sparse_add_entry,ptr.archive_entry,la_int64_t,la_int64_t	archive: archive_entry_sparse_add_entry(a1: ptr archive_entry; a2: la_int64_t; a3: la_int64_t)	
+archive_entry_sparse_count	nimarchive/archive.html#archive_entry_sparse_count,ptr.archive_entry	archive: archive_entry_sparse_count(a1: ptr archive_entry): cint	
+archive_entry_sparse_reset	nimarchive/archive.html#archive_entry_sparse_reset,ptr.archive_entry	archive: archive_entry_sparse_reset(a1: ptr archive_entry): cint	
+archive_entry_sparse_next	nimarchive/archive.html#archive_entry_sparse_next,ptr.archive_entry,ptr.la_int64_t,ptr.la_int64_t	archive: archive_entry_sparse_next(a1: ptr archive_entry; a2: ptr la_int64_t;\n                          a3: ptr la_int64_t): cint	
+archive_entry_linkresolver_new	nimarchive/archive.html#archive_entry_linkresolver_new	archive: archive_entry_linkresolver_new(): ptr archive_entry_linkresolver	
+archive_entry_linkresolver_set_strategy	nimarchive/archive.html#archive_entry_linkresolver_set_strategy,ptr.archive_entry_linkresolver,cint	archive: archive_entry_linkresolver_set_strategy(a1: ptr archive_entry_linkresolver;\n                                        a2: cint)	
+archive_entry_linkresolver_free	nimarchive/archive.html#archive_entry_linkresolver_free,ptr.archive_entry_linkresolver	archive: archive_entry_linkresolver_free(a1: ptr archive_entry_linkresolver)	
+archive_entry_linkify	nimarchive/archive.html#archive_entry_linkify,ptr.archive_entry_linkresolver,ptr.ptr.archive_entry,ptr.ptr.archive_entry	archive: archive_entry_linkify(a1: ptr archive_entry_linkresolver;\n                      a2: ptr ptr archive_entry; a3: ptr ptr archive_entry)	
+archive_entry_partial_links	nimarchive/archive.html#archive_entry_partial_links,ptr.archive_entry_linkresolver,ptr.cuint	archive: archive_entry_partial_links(res: ptr archive_entry_linkresolver; links: ptr cuint): ptr archive_entry	
