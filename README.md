@@ -16,7 +16,7 @@ This will download and install nimarchive in the standard Nimble package locatio
 
 __Usage__
 
-Module documentation can be found [here](http://nimgen.genotrance.com/nimarchive).
+Module documentation can be found [here](https://genotrance.github.io/nimarchive/theindex.html).
 
 ```nim
 import nimarchive
