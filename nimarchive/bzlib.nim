@@ -3,9 +3,9 @@ import os, strutils
 import nimterop/build
 
 const
-  baseDir = currentSourcePath.parentDir().parentDir() / "build" / "bzip2"
+  baseDir = getProjectCacheDir("nimarchive" / "bzip2")
 
-proc bzlibPreBuild(outdir, path: string) =
+proc bzlibPreBuild(outdir, path: string) {.used.} =
   var
     mf = baseDir / "Makefile"
     mfd = mf.readFile()

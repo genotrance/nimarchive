@@ -3,9 +3,9 @@ import os, strutils
 import nimterop/build
 
 const
-  baseDir = currentSourcePath.parentDir().parentDir() / "build" / "zlib"
+  baseDir = getProjectCacheDir("nimarchive" / "zlib")
 
-proc zlibPreBuild(outdir, path: string) =
+proc zlibPreBuild(outdir, path: string) {.used.} =
   let
     mf = outdir / "Makefile"
   if mf.fileExists():

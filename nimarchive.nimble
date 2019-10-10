@@ -9,7 +9,7 @@ skipDirs = @["tests"]
 
 # Dependencies
 
-requires "nimterop##134"
+requires "nimterop#head"
 
 var
   name = "nimarchive"
@@ -21,9 +21,6 @@ else:
   task docs, "Do nothing": discard
 
 task test, "Run tests":
-  rmDir("build")
-  exec "nim c --debugger:native --debuginfo -r tests/t" & name & ".nim"
-  exec "nim c --debugger:native --debuginfo -r tests/t" & name & "_extract.nim"
-  exec "nim c -d:release -r tests/t" & name & ".nim"
+  exec "nim c -f -d:release -r tests/t" & name & ".nim"
   exec "nim c -d:release -r tests/t" & name & "_extract.nim"
   docsTask()

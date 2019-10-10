@@ -3,7 +3,7 @@ import os, strutils
 import nimterop/build
 
 const
-  baseDir = currentSourcePath.parentDir().parentDir() / "build" / "liblzma"
+  baseDir = getProjectCacheDir("nimarchive" / "liblzma")
 
   conFlags = block:
     var

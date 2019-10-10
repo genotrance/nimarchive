@@ -6,7 +6,7 @@ static:
   cDebug()
 
 const
-  baseDir = currentSourcePath.parentDir().parentDir() / "build" / "libarchive"
+  baseDir = getProjectCacheDir("nimarchive" / "libarchive")
 
   defs = """
     archiveStatic
@@ -14,14 +14,17 @@ const
     archiveSetVer=3.4.0
 
     bzlibStatic
+    bzlibStd
     bzlibDL
     bzlibSetVer=1.0.8
 
     lzmaStatic
+    lzmaStd
     lzmaDL
     lzmaSetVer=5.2.4
 
     zlibStatic
+    zlibStd
     zlibDL
     zlibSetVer=1.2.11
   """
@@ -76,8 +79,7 @@ cPlugin:
   import strutils
 
   proc onSymbol*(sym: var Symbol) {.exportc, dynlib.} =
-    if sym.kind in [nskParam]:
-      sym.name = sym.name.strip(chars={'_'})
+    sym.name = sym.name.strip(chars={'_'}).replace("___", "_")
 
 cOverride:
   type
