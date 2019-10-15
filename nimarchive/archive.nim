@@ -66,6 +66,20 @@ proc archivePreBuild(outdir, path: string) =
   if not rf.contains(str):
     writeFile(path, rf & str)
 
+  let
+    lcm = outdir / "libarchive" / "CMakeLists.txt"
+  if lcm.fileExists():
+    var
+      lcmd = lcm.readFile()
+    lcmd = lcmd.multiReplace([
+      ("ADD_LIBRARY(archive SHARED ${libarchive_SOURCES} ${include_HEADERS})", ""),
+      ("TARGET_INCLUDE_DIRECTORIES(archive PUBLIC .)", ""),
+      ("TARGET_LINK_LIBRARIES(archive ${ADDITIONAL_LIBS})", ""),
+      ("SET_TARGET_PROPERTIES(archive PROPERTIES SOVERSION ${SOVERSION})", ""),
+      ("archive archive_static", "archive_static")
+    ])
+    lcm.writeFile(lcmd)
+
 getHeader(
   "archive.h",
   "https://github.com/libarchive/libarchive",

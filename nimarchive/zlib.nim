@@ -28,4 +28,7 @@ getHeader(
 )
 
 static:
-  cpFile(baseDir / "buildcache" / "zconf.h", baseDir / "zconf.h")
+  let
+    zconf = baseDir / "buildcache" / "zconf.h"
+  if fileExists(zconf):
+    cpFile(zconf, baseDir / "zconf.h")
