@@ -101,11 +101,12 @@ cOverride:
     dev_t* = int32
     mode_t* = uint32
 
-  when defined(windows):
+when defined(windows):
+  {.passL: "-lbcrypt".}
+
+  cOverride:
     type
       BY_HANDLE_FILE_INFORMATION* = object
-
-    {.passL: "-lbcrypt".}
 
 static:
   cSkipSymbol(@["archive_read_open_file", "archive_write_open_file"])
