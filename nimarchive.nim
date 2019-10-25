@@ -14,7 +14,7 @@ proc copyData(arch: ptr archive, ext: ptr archive, verbose=false): cint =
   var
     ret: cint
     buf: pointer
-    size: cuint
+    size: uint
     offset: la_int64_t
 
   while true:
