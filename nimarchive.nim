@@ -1,4 +1,4 @@
-import os
+import hashes, os
 
 import nimarchive/archive
 
@@ -29,10 +29,29 @@ proc copyData(arch: ptr archive, ext: ptr archive, verbose=false): cint =
       ret.check(ext, verbose)
       return ret
 
-proc extract*(path: string, extractDir: string, verbose=false) =
+proc extract*(path: string, extractDir: string, skipOuterDir = true,
+              tempDir = "", verbose=false) =
   ## Extracts the archive ``path`` into the specified ``directory``.
   ##
-  ## ``verbose`` - if ``true``, more verbose warnings are echoed to stdout
+  ## `skipOuterDir` extracts subdir contents to `extractDir` if archive contains
+  ## only one directory in the root
+  ##
+  ## `tempDir` is location to use for temporary extraction
+  ##
+  ## `verbose` if `true`, more verbose warnings are echoed to stdout
+
+
+  # Create a temporary directory for us to extract into. This allows us to
+  # implement the `skipOuterDirs` feature and ensures that no files are
+  # extracted into the specified directory if the extraction fails mid-way.
+  var
+	  tempDir = tempDir
+		hash = (path & extractDir).hash().abs()
+  if tempDir.len == 0:
+    tempDir = getTempDir() / "nimarchive-" & 
+  removeDir(tempDir)
+  createDir(tempDir)
+
   var
     arch = archive_read_new()
     ext = archive_write_disk_new()
