@@ -30,7 +30,7 @@ proc copyData(arch: ptr archive, ext: ptr archive, verbose=false): cint =
       return ret
 
 proc extract*(path: string, extractDir: string, skipOuterDir = true,
-              tempDir = "", verbose=false) =
+              tempDir = "", verbose = false) =
   ## Extracts the archive ``path`` into the specified ``directory``.
   ##
   ## `skipOuterDir` extracts subdir contents to `extractDir` if archive contains
@@ -39,25 +39,21 @@ proc extract*(path: string, extractDir: string, skipOuterDir = true,
   ## `tempDir` is location to use for temporary extraction
   ##
   ## `verbose` if `true`, more verbose warnings are echoed to stdout
-
-
-  # Create a temporary directory for us to extract into. This allows us to
-  # implement the `skipOuterDirs` feature and ensures that no files are
-  # extracted into the specified directory if the extraction fails mid-way.
-  var
-	  tempDir = tempDir
-		hash = (path & extractDir).hash().abs()
-  if tempDir.len == 0:
-    tempDir = getTempDir() / "nimarchive-" & 
-  removeDir(tempDir)
-  createDir(tempDir)
-
   var
     arch = archive_read_new()
     ext = archive_write_disk_new()
     entry: ptr archive_entry
     ret: cint
     currDir = getCurrentDir()
+    tempDir = tempDir
+
+  # Create a temporary directory for us to extract into. This allows us to
+  # implement the `skipOuterDir` feature and ensures that no files are
+  # extracted into the specified directory if the extraction fails mid-way.
+  if tempDir.len == 0:
+    tempDir = getTempDir() / "nimarchive-" & $((path & extractDir).hash().abs())
+  removeDir(tempDir)
+  createDir(tempDir)
 
   arch.archive_read_support_format_all().check(arch, verbose)
 
@@ -69,9 +65,9 @@ proc extract*(path: string, extractDir: string, skipOuterDir = true,
 
   arch.archive_read_open_filename(path.cstring, 10240).check(arch, verbose)
 
-  createDir(extractDir)
-  setCurrentDir(extractDir)
+  setCurrentDir(tempDir)
   defer:
+    removeDir(tempDir)
     setCurrentDir(currDir)
 
   while true:
@@ -89,3 +85,26 @@ proc extract*(path: string, extractDir: string, skipOuterDir = true,
 
   arch.archive_read_free().check(arch, verbose)
   ext.archive_write_free().check(ext, verbose)
+
+  var
+    srcDir = tempDir
+  if skipOuterDir:
+    for kind, path in walkDir(tempDir):
+      if kind == pcFile:
+        srcDir = tempDir
+        break
+      elif kind == pcDir:
+        if srcDir == tempDir:
+          srcDir = path
+        else:
+          srcDir = tempDir
+          break
+
+  setCurrentDir(currDir)
+  createDir(extractDir)
+  for kind, path in walkDir(srcDir, relative = true):
+    if kind == pcFile:
+      moveFile(srcDir / path, extractDir / path)
+    elif kind == pcDir:
+      moveDir(srcDir / path, extractDir / path)
+
