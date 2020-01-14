@@ -14,6 +14,9 @@ proc bzlibPreBuild(outdir, path: string) {.used.} =
   else:
     mfd = mfd.replace("CFLAGS=-Wall", "CFLAGS=-fPIC -Wall")
 
+  # Allow env var overrides of compiler
+  mfd = mfd.multiReplace([("CC=", "CC?="), ("LDFLAGS=", "LDFLAGS?=")])
+
   mf.writeFile(mfd)
 
 getHeader(

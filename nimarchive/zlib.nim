@@ -16,6 +16,26 @@ proc zlibPreBuild(outdir, path: string) {.used.} =
         # Fix static lib name on Windows
         setCmakeLibName(outdir, "zlibstatic", prefix = "lib", oname = "zlib", suffix = ".a")
 
+      when isDefined(zlibStatic):
+        # Don't build shared lib
+        var
+          cm = outdir / "CMakeLists.txt"
+          cmd = cm.readFile()
+          cmdo = ""
+        for line in cmd.splitLines():
+          var line = line
+          if "(zlib " in line:
+            if "zlibstatic" in line:
+              line = line.replace("(zlib ", "(")
+            else:
+              line = ""
+          elif " zlib " in line:
+            line = line.replace(" zlib ", " ")
+          elif "zlib)" in line:
+            line = line.replace("zlib)", "zlibstatic)")
+          if line.len != 0: cmdo &= line & "\n"
+        cm.writeFile(cmdo)
+
   when defined(posix):
     setCmakePositionIndependentCode(outdir)
 
