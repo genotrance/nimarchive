@@ -21,8 +21,7 @@ proc bzlibPreBuild(outdir, path: string) {.used.} =
 
 getHeader(
   "bzlib.h",
-  "https://sourceware.org/git/bzip2.git",
-  "https://sourceware.org/pub/bzip2/bzip2-$1.tar.gz",
+  "https://github.com/genotrance/bzip2",
   outdir = baseDir,
   altNames = "bz2",
   makeFlags = "libbz2.a"

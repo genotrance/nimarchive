@@ -14,6 +14,8 @@ This will download and install nimarchive in the standard Nimble package locatio
 
 [liblzma](https://github.com/kobolabs/liblzma) and [zlib](https://github.com/madler/zlib) are also downloaded since they are required dependencies.
 
+On Windows, `cmake` and `git bash` are required for a successful build. In addition, `git bash` should be in location that does not have spaces in the path without which `cmake` fails.
+
 __Usage__
 
 Module documentation can be found [here](https://genotrance.github.io/nimarchive/theindex.html).

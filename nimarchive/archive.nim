@@ -15,8 +15,8 @@ const
 
     bzlibStatic
     bzlibStd
-    bzlibDL
-    bzlibSetVer=1.0.8
+    bzlibGit
+    bzlibSetVer=bzip2-1.0.8
 
     lzmaStatic
     lzmaStd
