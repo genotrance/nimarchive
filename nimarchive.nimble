@@ -21,6 +21,6 @@ else:
   task docs, "Do nothing": discard
 
 task test, "Run tests":
-  exec "nim c -f -d:release -r tests/t" & name & ".nim"
-  exec "nim c -d:release -r tests/t" & name & "_extract.nim"
+  exec "nim c -f -d:release --path:.. -r tests/t" & name & ".nim"
+  exec "nim c -d:release --path:.. -r tests/t" & name & "_extract.nim"
   docsTask()
