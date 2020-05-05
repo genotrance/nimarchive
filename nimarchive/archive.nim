@@ -101,6 +101,9 @@ cOverride:
     dev_t* = int32
     mode_t* = uint32
 
+type
+  LA_MODE_T = int
+
 when defined(windows):
   {.passL: "-lbcrypt".}
 
@@ -112,11 +115,11 @@ static:
   cSkipSymbol(@["archive_read_open_file", "archive_write_open_file"])
 
 when archiveStatic:
-  cImport(archivePath, recurse = true)
+  cImport(archivePath, recurse = true, flags = "-f:ast2")
   {.passL: bzlibLPath.}
   {.passL: lzmaLPath.}
   {.passL: zlibLPath.}
   when defined(osx):
     {.passL: "-liconv".}
 else:
-  cImport(archivePath, recurse = true, dynlib = "archiveLPath")
+  cImport(archivePath, recurse = true, dynlib = "archiveLPath", flags = "-f:ast2")

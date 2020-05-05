@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.3.6"
+version       = "0.4.0"
 author        = "genotrance"
 description   = "libarchive wrapper for Nim"
 license       = "MIT"
@@ -9,7 +9,7 @@ skipDirs = @["tests"]
 
 # Dependencies
 
-requires "nimterop >= 0.4.4"
+requires "nimterop#head"
 
 var
   name = "nimarchive"
