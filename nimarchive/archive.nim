@@ -58,7 +58,8 @@ proc archivePreBuild(outdir, path: string) =
     " -DHAVE_LIBBZ2=1 -DHAVE_BZLIB_H=1" &
     " -DHAVE_LIBZ=1 -DHAVE_ZLIB_H=1 -I" &
     lzmaPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
-    zlibPath.parentDir().replace("\\", "/").replace("C:", "/c"))
+    zlibPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
+    bzlibPath.parentDir().replace("\\", "/").replace("C:", "/c"))
   putEnv("LIBS", &"{llp} {zlp} {blp}")
   let
     rf = readFile(path)

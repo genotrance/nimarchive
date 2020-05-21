@@ -9,7 +9,7 @@ skipDirs = @["tests"]
 
 # Dependencies
 
-requires "nimterop#head"
+requires "nimterop >= 0.5.5"
 
 var
   name = "nimarchive"
