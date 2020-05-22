@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.4.0"
+version       = "0.4.1"
 author        = "genotrance"
 description   = "libarchive wrapper for Nim"
 license       = "MIT"
