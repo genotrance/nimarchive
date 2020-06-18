@@ -22,8 +22,10 @@ proc bzlibPreBuild(outdir, path: string) {.used.} =
   mf.writeFile(mfd)
 
 getHeader(
-  "bzlib.h",
-  "https://github.com/genotrance/bzip2",
+  header = "bzlib.h",
+  giturl = "https://github.com/genotrance/bzip2",
+  conanuri = "bzip2",
+  jbburi = "bzip2",
   outdir = baseDir,
   altNames = "bz2",
   makeFlags = "libbz2.a"

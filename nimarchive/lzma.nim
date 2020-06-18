@@ -13,9 +13,11 @@ const
     cf
 
 getHeader(
-  "lzma.h",
+  header = "lzma.h",
   giturl = "https://github.com/xz-mirror/xz",
   dlurl = "https://tukaani.org/xz/xz-$1.tar.gz",
+  conanuri = "xz_utils",
+  jbburi = "xz",
   outdir = baseDir,
   conFlags = conFlags
 )

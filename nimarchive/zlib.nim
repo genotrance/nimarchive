@@ -40,7 +40,7 @@ proc zlibPreBuild(outdir, path: string) {.used.} =
     setCmakePositionIndependentCode(outdir)
 
 getHeader(
-  "zlib.h",
+  header = "zlib.h",
   giturl = "https://github.com/madler/zlib",
   dlurl = "http://zlib.net/zlib-$1.tar.gz",
   outdir = baseDir,
@@ -52,3 +52,6 @@ static:
     zconf = baseDir / "buildcache" / "zconf.h"
   if fileExists(zconf):
     cpFile(zconf, baseDir / "zconf.h")
+
+when isDefined(zlibJBB) and isDefined(zlibStatic):
+  {.passL: "-no-pie".}

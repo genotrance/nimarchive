@@ -15,17 +15,17 @@ const
 
     bzlibStatic
     bzlibStd
-    bzlibGit
-    bzlibSetVer=bzip2-1.0.8
+    bzlibConan
+    bzlibSetVer=1.0.8
 
     lzmaStatic
     lzmaStd
-    lzmaDL
+    lzmaConan
     lzmaSetVer=5.2.4
 
     zlibStatic
     zlibStd
-    zlibDL
+    zlibConan
     zlibSetVer=1.2.11
   """
 
@@ -61,11 +61,6 @@ proc archivePreBuild(outdir, path: string) =
     zlibPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
     bzlibPath.parentDir().replace("\\", "/").replace("C:", "/c"))
   putEnv("LIBS", &"{llp} {zlp} {blp}")
-  let
-    rf = readFile(path)
-    str = "\n#include \"archive_entry.h\"\n"
-  if not rf.contains(str):
-    writeFile(path, rf & str)
 
   let
     lcm = outdir / "libarchive" / "CMakeLists.txt"
@@ -82,9 +77,9 @@ proc archivePreBuild(outdir, path: string) =
     lcm.writeFile(lcmd)
 
 getHeader(
-  "archive.h",
-  "https://github.com/libarchive/libarchive",
-  "https://libarchive.org/downloads/libarchive-$1.zip",
+  header = "archive.h",
+  giturl = "https://github.com/libarchive/libarchive",
+  dlurl = "https://libarchive.org/downloads/libarchive-$1.zip",
   outdir = baseDir,
   conFlags = conFlags,
   cmakeFlags = cmakeFlags
@@ -115,12 +110,15 @@ when defined(windows):
 static:
   cSkipSymbol(@["archive_read_open_file", "archive_write_open_file"])
 
+let
+  archiveEntryPath {.compileTime.} = archivePath[0 .. ^3] & "_entry.h"
+
 when archiveStatic:
-  cImport(archivePath, recurse = true, flags = "-f:ast2")
+  cImport(@[archivePath, archiveEntryPath], recurse = true, flags = "-f:ast2")
   {.passL: bzlibLPath.}
   {.passL: lzmaLPath.}
   {.passL: zlibLPath.}
   when defined(osx):
     {.passL: "-liconv".}
 else:
-  cImport(archivePath, recurse = true, dynlib = "archiveLPath", flags = "-f:ast2")
+  cImport(@[archivePath, archiveEntryPath], recurse = true, dynlib = "archiveLPath", flags = "-f:ast2")
