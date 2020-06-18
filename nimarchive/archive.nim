@@ -15,17 +15,17 @@ const
 
     bzlibStatic
     bzlibStd
-    bzlibConan
-    bzlibSetVer=1.0.8
+    bzlibJBB
+    bzlibSetVer=1.0.6
 
     lzmaStatic
     lzmaStd
-    lzmaConan
+    lzmaJBB
     lzmaSetVer=5.2.4
 
     zlibStatic
     zlibStd
-    zlibConan
+    zlibJBB
     zlibSetVer=1.2.11
   """
 
