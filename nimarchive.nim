@@ -4,9 +4,11 @@ import nimarchive/archive
 
 proc check(err: cint, arch: ptr archive, verbose=false) =
   if err < ARCHIVE_OK and verbose:
+    # Echo warnings and errors if verbose
     echo $arch.archive_error_string() & ": " & $err
   if err < -20:
     if not verbose:
+      # Always echo errors
       echo $arch.archive_error_string() & ": " & $err
     raise newException(Exception, "Fatal failure")
 
@@ -76,7 +78,16 @@ proc extract*(path: string, extractDir: string, skipOuterDir = true,
       break
     ret.check(arch, verbose)
 
-    ext.archive_write_header(entry).check(ext, verbose)
+    ret = ext.archive_write_header(entry)
+    when defined(Windows):
+      if ret == ARCHIVE_FAILED:
+        let
+          ftype = entry.archive_entry_filetype().LA_MODE_T
+        if ftype == AE_IFLNK:
+          # Failed to extract symlink on Windows for some reason
+          continue
+    else:
+      ret.check(ext, verbose)
 
     if entry.archive_entry_size() > 0:
       arch.copyData(ext, verbose).check(arch, verbose)

@@ -98,7 +98,7 @@ cOverride:
     mode_t* = uint32
 
 type
-  LA_MODE_T = int
+  LA_MODE_T* = int
 
 when defined(windows):
   {.passL: "-lbcrypt".}
