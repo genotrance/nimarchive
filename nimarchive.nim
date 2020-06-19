@@ -1,4 +1,4 @@
-import hashes, os
+import hashes, os, times
 
 import nimarchive/archive
 
@@ -51,7 +51,7 @@ proc extract*(path: string, extractDir: string, skipOuterDir = true,
   # implement the `skipOuterDir` feature and ensures that no files are
   # extracted into the specified directory if the extraction fails mid-way.
   if tempDir.len == 0:
-    tempDir = getTempDir() / "nimarchive-" & $((path & extractDir).hash().abs())
+    tempDir = getTempDir() / "nimarchive-" & $((path & extractDir & $now()).hash().abs())
   removeDir(tempDir)
   createDir(tempDir)
 
