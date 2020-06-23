@@ -27,28 +27,34 @@ const
     zlibStd
     zlibJBB
     zlibSetVer=1.2.11
+
+    iconvStatic
+    iconvStd
+    iconvConan
+    iconvSetVer=1.16
   """
 
 setDefines(defs.splitLines())
 
-import bzlib, lzma, zlib
+import bzlib, lzma, zlib, iconv
 
 const
   llp = lzmaLPath.sanitizePath(sep = "/")
   zlp = zlibLPath.sanitizePath(sep = "/")
   blp = bzlibLPath.sanitizePath(sep = "/")
+  ilp = iconvLPath.sanitizePath(sep = "/")
 
   conFlags =
     flagBuild("--without-$#",
-      ["lzma", "zlib", "bz2lib", "nettle", "openssl", "libb2", "lz4", "zstd", "xml2", "expat"]
+      ["lzma", "zlib", "bz2lib", "iconv", "nettle", "openssl", "libb2", "lz4", "zstd", "xml2", "expat"]
     ) &
     flagBuild("--disable-$#",
       ["bsdtar", "bsdcat", "bsdcpio", "acl"]
     )
 
   cmakeFlags =
-    getCmakeIncludePath([lzmaPath.parentDir(), zlibPath.parentDir(), bzlibPath.parentDir()]) &
-    &" -DLIBLZMA_LIBRARY={llp} -DZLIB_LIBRARY={zlp} -DBZIP2_LIBRARY_RELEASE={blp}" &
+    getCmakeIncludePath([lzmaPath.parentDir(), zlibPath.parentDir(), bzlibPath.parentDir(), iconvPath.parentDir()]) &
+    &" -DLIBLZMA_LIBRARY={llp} -DZLIB_LIBRARY={zlp} -DBZIP2_LIBRARY_RELEASE={blp} -DICONV_LIBRARY={ilp}" &
     flagBuild("-DENABLE_$#=OFF",
       ["NETTLE", "OPENSSL", "LIBB2", "LZ4", "ZSTD", "LIBXML2", "EXPAT", "TEST", "TAR", "CAT", "CPIO", "ACL"]
     )
@@ -56,11 +62,13 @@ const
 proc archivePreBuild(outdir, path: string) =
   putEnv("CFLAGS", "-DHAVE_LIBLZMA=1 -DHAVE_LZMA_H=1" &
     " -DHAVE_LIBBZ2=1 -DHAVE_BZLIB_H=1" &
-    " -DHAVE_LIBZ=1 -DHAVE_ZLIB_H=1 -I" &
+    " -DHAVE_LIBZ=1 -DHAVE_ZLIB_H=1" &
+    " -DHAVE_ICONV=1 -DHAVE_ICONV_H=1 -I" &
     lzmaPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
     zlibPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
-    bzlibPath.parentDir().replace("\\", "/").replace("C:", "/c"))
-  putEnv("LIBS", &"{llp} {zlp} {blp}")
+    bzlibPath.parentDir().replace("\\", "/").replace("C:", "/c") & " -I" &
+    iconvPath.parentDir().replace("\\", "/").replace("C:", "/c"))
+  putEnv("LIBS", &"{llp} {zlp} {blp} {ilp}")
 
   let
     lcm = outdir / "libarchive" / "CMakeLists.txt"
@@ -118,7 +126,6 @@ when archiveStatic:
   {.passL: bzlibLPath.}
   {.passL: lzmaLPath.}
   {.passL: zlibLPath.}
-  when defined(osx):
-    {.passL: "-liconv".}
+  {.passL: iconvLPath.}
 else:
   cImport(@[archivePath, archiveEntryPath], recurse = true, dynlib = "archiveLPath", flags = "-f:ast2")

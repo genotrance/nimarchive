@@ -12,13 +12,13 @@ Nimarchive can be installed via [Nimble](https://github.com/nim-lang/nimble):
 
 This will download and install nimarchive in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
 
-[liblzma](https://github.com/kobolabs/liblzma) and [zlib](https://github.com/madler/zlib) are also downloaded since they are required dependencies.
+[bzip2](https://sourceware.org/bzip2/), [liblzma](https://github.com/kobolabs/liblzma), [zlib](https://github.com/madler/zlib) and [libiconv](https://www.gnu.org/software/libiconv/) are also downloaded since they are required dependencies.
 
 On Windows, `cmake` and `git bash` are required for a successful build. In addition, `git bash` should be in location that does not have spaces in the path without which `cmake` fails.
 
 __Usage__
 
-Module documentation can be found [here](https://genotrance.github.io/nimarchive/theindex.html).
+Module documentation can be found [here](https://genotrance.github.io/nimarchive/nimarchive/archive.html).
 
 ```nim
 import nimarchive
@@ -32,7 +32,7 @@ Refer to the ```tests``` directory for examples on how the library can be used. 
 
 __Credits__
 
-Nimarchive wraps the libarchive source code and all licensing terms of [libarchive](https://github.com/libarchive/libarchive/blob/master/COPYING) apply to the usage of this package. The [liblzma](https://github.com/kobolabs/liblzma/blob/master/COPYING) and [zlib](https://zlib.net/zlib_license.html) terms also apply since they are dependencies.
+Nimarchive wraps the libarchive source code and all licensing terms of [libarchive](https://github.com/libarchive/libarchive/blob/master/COPYING) apply to the usage of this package. The [bzip2](https://github.com/genotrance/bzip2/blob/master/LICENSE), [liblzma](https://github.com/kobolabs/liblzma/blob/master/COPYING), [zlib](https://zlib.net/zlib_license.html) and [libiconv](https://www.gnu.org/licenses/lgpl-2.1.html) terms also apply since they are dependencies.
 
 __Feedback__
 
