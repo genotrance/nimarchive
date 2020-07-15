@@ -109,8 +109,6 @@ type
   LA_MODE_T* = int
 
 when defined(windows):
-  {.passL: "-lbcrypt".}
-
   cOverride:
     type
       BY_HANDLE_FILE_INFORMATION* = object
@@ -129,3 +127,6 @@ when archiveStatic:
   {.passL: iconvLPath.}
 else:
   cImport(@[archivePath, archiveEntryPath], recurse = true, dynlib = "archiveLPath", flags = "-f:ast2")
+
+when defined(windows):
+  {.passL: "-lbcrypt".}
