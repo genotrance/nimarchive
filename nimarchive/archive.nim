@@ -17,11 +17,6 @@ const
     iconvStd
     iconvConan
     iconvSetVer=1.16
-
-    zstdStatic
-    zstdStd
-    zstdConan
-    zstdSetVer=1.4.5
   """
 
 setDefines(defs.splitLines())
@@ -30,10 +25,10 @@ getHeader(
   header = "archive.h",
   outdir = baseDir,
   jbburi = "LibArchive",
-  jbbFlags = "url=https://bintray.com/genotrance/binaries/download_file?file_path=LibArchive-v$1/ skip=libiconv,zstd"
+  jbbFlags = "url=https://bintray.com/genotrance/binaries/download_file?file_path=LibArchive-v$1/ skip=libiconv"
 )
 
-import iconv, zstd
+import iconv
 
 cPlugin:
   import strutils
