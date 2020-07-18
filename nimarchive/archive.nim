@@ -11,7 +11,7 @@ const
   defs = """
     archiveStatic
     archiveJBB
-    archiveSetVer=3.4.0
+    archiveSetVer=3.4.3
 
     iconvStatic
     iconvStd
