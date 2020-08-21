@@ -24,11 +24,13 @@ matrix:
       arch: arm64
       env:
         - BRANCH=1.2.4
+        - ARCHIVE_STATIC=1
     # Linux - ppc64
     - os: linux
       arch: ppc64le
       env:
         - BRANCH=1.2.4
+        - ARCHIVE_STATIC=1
     # macOS - amd64
     - os: osx
       env:
@@ -62,6 +64,11 @@ cache:
 
 install:
   - |
+    if [[ "${ARCHIVE_STATIC}" == "1" ]]; then
+      # Packages required for archiveStatic/archiveStd
+      apt-get install -y libarchive13 libarchive-dev
+    fi
+  - |
     # Use choosenim if already available for platform, otherwise build nim
     case $TRAVIS_CPU_ARCH in
       amd64 )
@@ -81,7 +88,7 @@ install:
         sh build_all.sh
         popd
         popd
-        PATH="$HOME/Nim/bin:$PATH"
+        export PATH="$HOME/Nim/bin:$PATH"
         ;;
     esac
 

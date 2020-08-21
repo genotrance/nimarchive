@@ -11,11 +11,13 @@ const
   defs = """
     archiveStatic
     archiveJBB
+    archiveDL
     archiveSetVer=3.4.3
 
     iconvStatic
     iconvStd
     iconvConan
+    iconvDL
     iconvSetVer=1.16
   """
 
@@ -23,9 +25,11 @@ setDefines(defs.splitLines())
 
 getHeader(
   header = "archive.h",
+  dlurl = "https://libarchive.org/downloads/libarchive-$1.tar.gz",
   outdir = baseDir,
   jbburi = "LibArchive",
-  jbbFlags = "url=https://bintray.com/genotrance/binaries/download_file?file_path=LibArchive-v$1/ skip=libiconv"
+  jbbFlags = "url=https://bintray.com/genotrance/binaries/download_file?file_path=LibArchive-v$1/ skip=libiconv",
+  conFlags = "--enable-static=yes"
 )
 
 import iconv
