@@ -47,7 +47,6 @@ cache:
     - "$HOME/.choosenim"
 
 install:
-  - sudo apt-get update && sudo apt-get install -y curl xz-utils g++ git
   - |
     # Use choosenim if already available for arch, otherwise build nim
     case $TRAVIS_CPU_ARCH in
