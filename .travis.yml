@@ -1,24 +1,81 @@
-os:
-  - windows
-  - linux
-  - osx
-
+os: linux
+dist: bionic
 language: c
 
-env:
-  - BRANCH=0.20.2
-  - BRANCH=1.0.6
-  - BRANCH=1.2.2
-  - BRANCH=devel
+matrix:
+  include:
+    # Linux - amd64
+    - arch: amd64
+      env: BRANCH=0.20.2
+    - arch: amd64
+      env: BRANCH=1.0.6
+    - arch: amd64
+      env: BRANCH=1.2.4
+    - arch: amd64
+      env: BRANCH=devel
+
+    # Linux - arm64
+    - arch: arm64
+      env: BRANCH=1.2.4
+
+    # Linux - ppc64
+    - arch: ppc64le
+      env: BRANCH=1.2.4
+
+    # macOS - amd64
+    - os: osx
+      env: BRANCH=0.20.2
+    - os: osx
+      env: BRANCH=1.2.4
+    - os: osx
+      env: BRANCH=1.0.6
+    - os: osx
+      env: BRANCH=devel
+
+    # windows - amd64
+    - os: windows
+      env: BRANCH=0.20.2
+    - os: windows
+      env: BRANCH=1.2.4
+    - os: windows
+      env: BRANCH=1.0.6
+    - os: windows
+      env: BRANCH=devel
 
 cache:
   directories:
     - "$HOME/.choosenim"
+    - "$HOME/Nim"
 
 install:
-  - curl https://gist.github.com/genotrance/fb53504a4fba88bc5201d3783df5c522/raw/travis.sh -LsSf -o travis.sh
-  - source travis.sh
+  - |
+    if [[ "${TRAVIS_CPU_ARCH}" == "amd64" ]]; then
+      # Use choosenim on amd64
+      curl https://gist.github.com/genotrance/fb53504a4fba88bc5201d3783df5c522/raw/travis.sh -LsSf -o travis.sh
+      source travis.sh
+    else
+      # choosenim doesn't support non-amd64 architectures yet, so build nim
+      NIMREPO="${HOME}/Nim/${TRAVIS_CPU_ARCH}/${BRANCH}"
+      export PATH="${NIMREPO}/bin:$PATH"
+      if [[ ! -f "${NIMREPO}/bin/nim" ]]; then
+        if [[ "${BRANCH}" =~ [0-9] ]]; then
+          GITREF="v${BRANCH}" # version tag
+        else
+          GITREF="${BRANCH}"
+        fi
+        git clone -b "${GITREF}" --single-branch https://github.com/nim-lang/Nim.git "${NIMREPO}"
+        pushd "${NIMREPO}"
+        sh build_all.sh
+        popd
+      fi
+    fi
 
 script:
   - nimble develop -y
-  - nimble test
+  - |
+    if [[ "${TRAVIS_CPU_ARCH}" == "amd64" ]]; then
+      nimble test
+    else:
+      # non-amd64 has to build iconv, can take a while with no output
+      travis_wait 20 nimble test
+    fi

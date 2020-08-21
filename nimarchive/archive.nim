@@ -8,6 +8,13 @@ static:
 const
   baseDir = getProjectCacheDir("nimarchive" / "libarchive")
 
+  iconvMode =
+    when hostCPU == "amd64":
+      "Conan"
+    else:
+      # Non-amd64 can't use iconvConan, so use iconvDL instead
+      "DL"
+
   defs = """
     archiveStatic
     archiveJBB
@@ -15,9 +22,9 @@ const
 
     iconvStatic
     iconvStd
-    iconvConan
+    iconv$#
     iconvSetVer=1.16
-  """
+  """ % iconvMode
 
 setDefines(defs.splitLines())
 
