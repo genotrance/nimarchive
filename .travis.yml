@@ -45,41 +45,37 @@ matrix:
 cache:
   directories:
     - "$HOME/.choosenim"
+    - "$HOME/Nim"
 
 install:
   - |
-    # Use choosenim if already available for arch, otherwise build nim
-    case $TRAVIS_CPU_ARCH in
-      amd64 )
-        curl https://gist.github.com/genotrance/fb53504a4fba88bc5201d3783df5c522/raw/travis.sh -LsSf -o travis.sh
-        source travis.sh
-        ;;
-      * )
-        pushd $HOME
+    if [[ "${TRAVIS_CPU_ARCH}" == "amd64" ]]; then
+      # Use choosenim on amd64
+      curl https://gist.github.com/genotrance/fb53504a4fba88bc5201d3783df5c522/raw/travis.sh -LsSf -o travis.sh
+      source travis.sh
+    else
+      # choosenim doesn't support non-amd64 architectures yet, so build nim
+      NIMREPO="${HOME}/Nim/${TRAVIS_CPU_ARCH}/${BRANCH}"
+      export PATH="${NIMREPO}/bin:$PATH"
+      if [[ ! -f "${NIMREPO}/bin/nim" ]]; then
         if [[ "${BRANCH}" =~ [0-9] ]]; then
-          # Tag
-          export COMMITLIKE="v${BRANCH}"
+          GITREF="v${BRANCH}" # version tag
         else
-          export COMMITLIKE="${BRANCH}"
+          GITREF="${BRANCH}"
         fi
-        git clone -b "${COMMITLIKE}" --single-branch https://github.com/nim-lang/Nim.git
-        pushd Nim
+        git clone -b "${GITREF}" --single-branch https://github.com/nim-lang/Nim.git "${NIMREPO}"
+        pushd "${NIMREPO}"
         sh build_all.sh
         popd
-        popd
-        export PATH="$HOME/Nim/bin:$PATH"
-        ;;
-    esac
+      fi
+    fi
 
 script:
   - nimble develop -y
   - |
-    case $TRAVIS_CPU_ARCH in
-      amd64 )
-        nimble test
-        ;;
-      * )
-        # non-amd64 has to build iconv, can take a while with no output
-        travis_wait 20 nimble test
-        ;;
-    esac
+    if [[ "${TRAVIS_CPU_ARCH}" == "amd64" ]]; then
+      nimble test
+    else:
+      # non-amd64 has to build iconv, can take a while with no output
+      travis_wait 20 nimble test
+    fi
