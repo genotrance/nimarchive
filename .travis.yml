@@ -24,7 +24,6 @@ matrix:
       arch: arm64
       env:
         - BRANCH=1.2.4
-        - ARCHIVE_STATIC=1
     # Linux - ppc64
     - os: linux
       arch: ppc64le
@@ -58,9 +57,9 @@ matrix:
       env:
         - BRANCH=devel
 
-# cache:
-#   directories:
-#     - "$HOME/.choosenim"
+cache:
+  directories:
+    - "$HOME/.choosenim"
 
 install:
   - |

@@ -8,18 +8,30 @@ static:
 const
   baseDir = getProjectCacheDir("nimarchive" / "libarchive")
 
-  defs = """
-    archiveStatic
-    archiveJBB
-    archiveDL
-    archiveSetVer=3.4.3
+  defs =
+    when hostCPU == "amd64": """
+      archiveStatic
+      archiveStd
+      archiveJBB
+      archiveSetVer=3.4.3
 
-    iconvStatic
-    iconvStd
-    iconvConan
-    iconvDL
-    iconvSetVer=1.16
-  """
+      iconvStatic
+      iconvStd
+      iconvConan
+      iconvSetVer=1.16
+    """
+    # JBB/Conan build only available for amd64
+    else: """
+      archiveStatic
+      archiveStd
+      archiveDL
+      archiveSetVer=3.4.3
+
+      iconvStatic
+      iconvStd
+      iconvDL
+      iconvSetVer=1.16
+    """
 
 setDefines(defs.splitLines())
 
