@@ -1,72 +1,53 @@
+os: linux
+dist: bionic
 language: c
 
 matrix:
   include:
     # Linux - amd64
-    - os: linux
-      arch: amd64
-      env:
-        - BRANCH=0.20.2
-    - os: linux
-      arch: amd64
-      env:
-        - BRANCH=1.0.6
-    - os: linux
-      arch: amd64
-      env:
-        - BRANCH=1.2.4
-    - os: linux
-      arch: amd64
-      env:
-        - BRANCH=devel
+    - arch: amd64
+      env: BRANCH=0.20.2
+    - arch: amd64
+      env: BRANCH=1.0.6
+    - arch: amd64
+      env: BRANCH=1.2.4
+    - arch: amd64
+      env: BRANCH=devel
+
     # Linux - arm64
-    - os: linux
-      arch: arm64
-      env:
-        - BRANCH=1.2.4
+    - arch: arm64
+      env: BRANCH=1.2.4
+
     # Linux - ppc64
-    - os: linux
-      arch: ppc64le
-      env:
-        - BRANCH=1.2.4
-        - ARCHIVE_STATIC=1
+    - arch: ppc64le
+      env: BRANCH=1.2.4 ARCHIVE_STATIC=1
+
     # macOS - amd64
     - os: osx
-      env:
-        - BRANCH=0.20.2
+      env: BRANCH=0.20.2
     - os: osx
-      env:
-        - BRANCH=1.2.4
+      env: BRANCH=1.2.4
     - os: osx
-      env:
-        - BRANCH=1.0.6
+      env: BRANCH=1.0.6
     - os: osx
-      env:
-        - BRANCH=devel
+      env: BRANCH=devel
+
     # windows - amd64
     - os: windows
-      env:
-        - BRANCH=0.20.2
+      env: BRANCH=0.20.2
     - os: windows
-      env:
-        - BRANCH=1.2.4
+      env: BRANCH=1.2.4
     - os: windows
-      env:
-        - BRANCH=1.0.6
+      env: BRANCH=1.0.6
     - os: windows
-      env:
-        - BRANCH=devel
+      env: BRANCH=devel
 
 cache:
   directories:
     - "$HOME/.choosenim"
 
 install:
-  - |
-    if [[ "${ARCHIVE_STATIC}" == "1" ]]; then
-      # Packages required for archiveStatic/archiveStd
-      sudo apt-get install -y libarchive13 libarchive-dev
-    fi
+  - sudo apt-get update && sudo apt-get install -y curl xz-utils g++ git
   - |
     # Use choosenim if already available for platform, otherwise build nim
     case $TRAVIS_CPU_ARCH in
@@ -90,6 +71,11 @@ install:
         export PATH="$HOME/Nim/bin:$PATH"
         ;;
     esac
+  - |
+    if [[ "${ARCHIVE_STATIC}" == "1" ]]; then
+      # Packages required for archiveStatic/archiveStd
+      sudo apt-get install -y libarchive13 libarchive-dev
+    fi
 
 script:
   - nimble develop -y
