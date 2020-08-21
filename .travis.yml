@@ -49,7 +49,7 @@ cache:
 install:
   - sudo apt-get update && sudo apt-get install -y curl xz-utils g++ git
   - |
-    # Use choosenim if already available for platform, otherwise build nim
+    # Use choosenim if already available for arch, otherwise build nim
     case $TRAVIS_CPU_ARCH in
       amd64 )
         curl https://gist.github.com/genotrance/fb53504a4fba88bc5201d3783df5c522/raw/travis.sh -LsSf -o travis.sh
