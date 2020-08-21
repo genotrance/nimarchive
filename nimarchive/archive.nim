@@ -15,8 +15,8 @@ const
 
     iconvStatic
     iconvStd
-    iconvConan
-    iconvSetVer=1.16
+    iconvJBB
+    iconvSetVer=1.16.0
   """
 
 setDefines(defs.splitLines())
