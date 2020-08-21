@@ -8,40 +8,31 @@ static:
 const
   baseDir = getProjectCacheDir("nimarchive" / "libarchive")
 
-  defs =
-    when hostCPU == "amd64": """
-      archiveStatic
-      archiveStd
-      archiveJBB
-      archiveSetVer=3.4.3
+  iconvMode =
+    when hostCPU == "amd64":
+      "Conan"
+    else:
+      # Non-amd64 can't use iconvConan, so use iconvDL instead
+      "DL"
 
-      iconvStatic
-      iconvStd
-      iconvConan
-      iconvSetVer=1.16
-    """
-    # JBB/Conan build only available for amd64
-    else: """
-      archiveStatic
-      archiveStd
-      archiveDL
-      archiveSetVer=3.4.3
+  defs = """
+    archiveStatic
+    archiveJBB
+    archiveSetVer=3.4.3
 
-      iconvStatic
-      iconvStd
-      iconvDL
-      iconvSetVer=1.16
-    """
+    iconvStatic
+    iconvStd
+    iconv$#
+    iconvSetVer=1.16
+  """ % iconvMode
 
 setDefines(defs.splitLines())
 
 getHeader(
   header = "archive.h",
-  dlurl = "https://libarchive.org/downloads/libarchive-$1.tar.gz",
   outdir = baseDir,
   jbburi = "LibArchive",
-  jbbFlags = "url=https://bintray.com/genotrance/binaries/download_file?file_path=LibArchive-v$1/ skip=libiconv",
-  conFlags = "--enable-static=yes"
+  jbbFlags = "url=https://bintray.com/genotrance/binaries/download_file?file_path=LibArchive-v$1/ skip=libiconv"
 )
 
 import iconv

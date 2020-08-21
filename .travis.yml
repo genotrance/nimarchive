@@ -20,7 +20,7 @@ matrix:
 
     # Linux - ppc64
     - arch: ppc64le
-      env: BRANCH=1.2.4 ARCHIVE_STATIC=1
+      env: BRANCH=1.2.4
 
     # macOS - amd64
     - os: osx
@@ -71,12 +71,16 @@ install:
         export PATH="$HOME/Nim/bin:$PATH"
         ;;
     esac
-  - |
-    if [[ "${ARCHIVE_STATIC}" == "1" ]]; then
-      # Packages required for archiveStatic/archiveStd
-      sudo apt-get install -y libarchive13 libarchive-dev
-    fi
 
 script:
   - nimble develop -y
-  - nimble test
+  - |
+    case $TRAVIS_CPU_ARCH in
+      amd64 )
+        nimble test
+        ;;
+      * )
+        # non-amd64 has to build iconv, can take a while with no output
+        travis_wait 20 nimble test
+        ;;
+    esac
