@@ -58,9 +58,9 @@ matrix:
       env:
         - BRANCH=devel
 
-cache:
-  directories:
-    - "$HOME/.choosenim"
+# cache:
+#   directories:
+#     - "$HOME/.choosenim"
 
 install:
   - |
