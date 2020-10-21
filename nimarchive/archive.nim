@@ -2,9 +2,6 @@ import os, strutils
 
 import nimterop/[build, cimport]
 
-static:
-  cDebug()
-
 const
   baseDir = getProjectCacheDir("nimarchive" / "libarchive")
 
