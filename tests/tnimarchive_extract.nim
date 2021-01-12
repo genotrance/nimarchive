@@ -1,4 +1,5 @@
 import nimarchive
+import nimarchive/permissions
 
 import os
 
@@ -8,6 +9,7 @@ let
 proc rmDir(dest: string) =
   while dirExists(dest):
     try:
+      makeUserWritableRec(dest)
       removeDir(dest)
     except:
       sleep(100)

@@ -1,6 +1,7 @@
 import hashes, os, times
 
 import nimarchive/archive
+import nimarchive/permissions
 
 proc check(err: cint, arch: ptr archive, verbose=false) =
   if err < ARCHIVE_OK and verbose:
@@ -69,6 +70,7 @@ proc extract*(path: string, extractDir: string, skipOuterDir = true,
 
   setCurrentDir(tempDir)
   defer:
+    makeUserWritableRec(tempDir)
     removeDir(tempDir)
     setCurrentDir(currDir)
 
@@ -113,9 +115,11 @@ proc extract*(path: string, extractDir: string, skipOuterDir = true,
 
   setCurrentDir(currDir)
   createDir(extractDir)
+  let permissions = getPermissionsRelativeRec(srcDir)
+  makeUserWritableRec(srcDir)
   for kind, path in walkDir(srcDir, relative = true):
     if kind == pcFile:
       moveFile(srcDir / path, extractDir / path)
     elif kind == pcDir:
       moveDir(srcDir / path, extractDir / path)
-
+  setPermissionsRec(extractDir, permissions)
