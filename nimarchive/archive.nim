@@ -18,11 +18,13 @@ const
 
 setDefines(defs.splitLines())
 
+# https://github.com/nimterop/nimterop#build-api
+# https://github.com/libarchive/libarchive/tree/v3.5.2/libarchive
 getHeader(
-  header = "archive.h",
+  header = "libarchive/archive.h",
   outdir = baseDir,
-  jbburi = "LibArchive",
-  jbbFlags = "url=https://bintray.com/genotrance/binaries/download_file?file_path=LibArchive-v$1/ skip=libiconv"
+  giturl = "https://github.com/libarchive/libarchive",
+  dlurl = "https://github.com/libarchive/libarchive/releases/download/v3.5.2/libarchive-3.5.2.tar.gz"
 )
 
 import iconv
