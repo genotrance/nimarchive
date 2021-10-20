@@ -5,24 +5,12 @@ import nimterop/[build, cimport]
 const
   baseDir = getProjectCacheDir("nimarchive" / "libarchive")
 
-  defs = """
-    archiveStatic
-    archiveJBB
-    archiveSetVer=3.4.3
-
-    iconvStatic
-    iconvStd
-    iconvJBB
-    iconvSetVer=1.16.0
-  """
-
-setDefines(defs.splitLines())
-
+# https://github.com/nimterop/nimterop#build-api
+# https://github.com/libarchive/libarchive/tree/v3.5.2/libarchive
 getHeader(
-  header = "archive.h",
+  header = "libarchive/archive.h",
   outdir = baseDir,
-  jbburi = "LibArchive",
-  jbbFlags = "url=https://bintray.com/genotrance/binaries/download_file?file_path=LibArchive-v$1/ skip=libiconv"
+  giturl = "https://github.com/libarchive/libarchive"
 )
 
 import iconv
